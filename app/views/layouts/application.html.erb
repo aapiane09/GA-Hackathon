@@ -9,6 +9,24 @@
   </head>
 
   <body>
+    <nav id="navbar">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">&nbsp;GAHackathon</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <% if current_user %>
+            Signed in as <%= current_user.first_name %>
+            <li><%= current_user.username%>!&nbsp;</li>
+            <li><%= link_to "Profile", user_path(current_user) %></li>
+            <li><%= link_to "Log Out", logout_path %></li>
+          <% else %>
+            <li><%= link_to "Sign Up", new_user_path %></li>
+            <li><%= link_to "Log In", login_path %></li>
+          <% end %>
+          <% console %>
+        </ul>
+      </div>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
