@@ -30,10 +30,25 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+# FRIENDLY_ID - Makes URL display specified name
+gem 'friendly_id', '~> 5.1.0'
+# Provides aesthetically pleasing temporary flash messages
+gem 'toastr-rails'
+# Provides randomized seed data
+gem 'ffaker'
+# Bootstrap
+gem 'bootstrap', '~> 4.0.0.alpha6'
+# easily upload and store files from the user
+gem 'carrierwave', '~> 1.0'
+# include a thumbnail
+gem 'mini_magick', '~> 4.3'
+# Allows voting on posts
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,6 +62,11 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Provides randomized seed data
+  gem 'ffaker'
+  # Creates an entity relationship diagram of model relationships
+  gem "rails-erd"
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
