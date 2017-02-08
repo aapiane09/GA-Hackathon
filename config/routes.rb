@@ -22,9 +22,9 @@ Rails.application.routes.draw do
   # IDEAS ROUTES
   get '/ideas' => 'ideas#index', as: 'ideas'
   get '/ideas/:id' => 'ideas#show', as: 'idea'
-  get '/ideas/new' => 'ideas#new', as: "new_event"
+  get '/ideas/new' => 'ideas#new', as: 'new_idea'
   post '/ideas' => 'ideas#create'
-  get '/ideas/:id/edit' => 'ideas#edit', as: 'edit_event'
+  get '/ideas/:id/edit' => 'ideas#edit', as: 'edit_idea'
   patch '/ideas/:id' => 'ideas#update'
   delete '/ideas/:id' => 'ideas#destroy'
 
