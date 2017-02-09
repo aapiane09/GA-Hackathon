@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/events/:id/edit' => 'events#edit', as: 'edit_event'
   patch '/events/:id' => 'events#update'
   delete '/events/:id' => 'events#destroy'
+  # get '/events/:id/ideas' => 'ideas#index', as: 'ideas'
 
   # IDEAS ROUTES
   get '/ideas' => 'ideas#index', as: 'ideas'

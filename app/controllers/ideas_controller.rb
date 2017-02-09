@@ -1,7 +1,8 @@
 class IdeasController < ApplicationController
 
   def index
-    @ideas = Idea.all
+    @event = Event.find_by_id(params[:id])
+    @ideas = @event.ideas
   end
 
   def show
