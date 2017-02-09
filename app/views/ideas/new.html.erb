@@ -1,0 +1,11 @@
+<h1>New fucking Idea</h1>
+
+<%= form_for @idea do |f| %>
+  <div>
+    <%= f.text_field :title, placeholder: "Title" %>
+  </div>
+  <div>
+    <%= f.text_field :content, placeholder: "Content" %>
+  </div>
+  <%= f.submit "Sign Up" %>
+<% end %>

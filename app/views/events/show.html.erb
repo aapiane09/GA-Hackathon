@@ -1,5 +1,7 @@
 <h2><%= @event.event_name %></h2>
 
+<%= button_to "Add Idea", new_idea_path(@event)%>
+
 <h2>SUPER COOL IDEAS!</h2>
 <hr>
 <% @event.ideas.each do |idea| %>
