@@ -7,6 +7,7 @@
         <%= stylesheet_link_tag    'application', media: 'all' %>
         <%= javascript_include_tag 'application' %>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-default">
@@ -15,8 +16,7 @@
                 <div class="navbar-header">
                     <div class="navbar-brand">
                         <ul class="nav navbar-nav navbar-left nav-list">
-                            <li><%= link_to image_tag('ga_logo1.png', :width => 50, :height => 50), root_path %>
-                                Hackathon</li>
+                            <li id="hackathon"><%= link_to image_tag('ga_logo1.png', :width => 50, :height => 50), root_path, class:"hackathon" %> Hackathon</li>
                         </ul>
                     </div>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">

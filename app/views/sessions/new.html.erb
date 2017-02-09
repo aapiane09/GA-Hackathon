@@ -1,20 +1,22 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-md-4 col-xs-4">
+    <div class="col-md-2 col-xs-2">
 
     </div>
-    <div class="form-group col-md-4 col-xs-4">
+    <div class="form-group col-md-8 col-xs-8">
       <div class="row">
-        <h4 id="signupheader">Login</h4>
+        <h4 id="signupheader">LOGIN</h4>
       </div>
         <%= form_for @user, :url => sessions_path(@user) do |f| %>
-          Email
+
           <div class="">
+            <p class="login_label">Email</p>
             <%= f.email_field :email, placeholder: " Email", id:"form" %>
           </div>
-          Password
+
           <div class="">
+          <p class="login_label">Password</p>
             <%= f.password_field :password, placeholder: " Password", id:"form" %>
           </div>
           <div class="">
@@ -22,7 +24,7 @@
           </div>
       <% end %>
     </div>
-    <div class="col-md-4 col-xs-4">
+    <div class="col-md-2 col-xs-2">
 
     </div>
   </div>
