@@ -42,14 +42,15 @@ gem 'toastr-rails'
 # Provides randomized seed data
 gem 'ffaker'
 # Bootstrap
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap-sass', '~> 3.3.6'
 # easily upload and store files from the user
 gem 'carrierwave', '~> 1.0'
 # include a thumbnail
 gem 'mini_magick', '~> 4.3'
 # Allows voting on posts
 gem 'acts_as_votable', '~> 0.10.0'
-
+# provides sprockets implementation for rails 4.x and beyond Assest Pipeline
+gem 'sprockets-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
