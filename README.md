@@ -1,24 +1,67 @@
-# README
+# GA-Hackathon - [Live Link](https://google.com)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img src="https://cloud.githubusercontent.com/assets/7833470/10423298/ea833a68-7079-11e5-84f8-0a925ab96893.png" width="100">
 
-Things you may want to cover:
+## General Assembly Hackathon
 
-* Ruby version
+<i> Full Stack App built for our WDI Group Project </i>
 
-* System dependencies
+Vagabond is a simple way for users to share tips (AKA posts) about their favorite locations around the world.
 
-* Configuration
+Users will be able to create a profile, make new posts and view a record of their travels.
 
-* Database creation
 
-* Database initialization
+Feel free to fork / star / watch for your own personal use.
 
-* How to run the test suite
+See the published project at [test.herokuapp.com](https://google.com/)!
 
-* Services (job queues, cache servers, search engines, etc.)
+#Entity-Relationship Diagram
+<img src="http://i.imgur.com/ZOUqgqM.png" width="800">
 
-* Deployment instructions
 
-* ...
+#Technologies Used   
+
+####Languages:
+HTML5, JavaScript, CSS, Ruby
+####External Libraries:
+jQuery, Bootstrap
+####Frameworks:
+Rails
+
+
+
+## Code We're Proud Of
+<hr>
+Greice
+<hr>
+```ruby
+def update
+```
+<hr>
+Zach
+<hr>
+```ruby
+def
+```
+<hr>
+Shiv
+<hr>
+```ruby
+def activity_count
+```
+<hr>
+Alex
+<hr>
+```ruby
+def activity_count
+```
+
+## Screen Shots
+<img src="http://i.imgur.com/tS1Lsuo.jpg" width="600">
+<hr>
+<img src="http://i.imgur.com/j9GVwR7.png" width="600">
+<hr>
+<img src="http://i.imgur.com/ReJXa7Q.png" width="600">
+
+### Contributors
+[Greice Silva](https://github.com/greicens), [Zach Cusimano](https://github.com/c00z), [Alex Piane](https://github.com/aapiane09) & [Shivinder Gogna](https://github.com/shivngiggles)
