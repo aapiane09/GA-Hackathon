@@ -48,9 +48,17 @@
             <!-- /.container-fluid -->
         </nav>
 
-        
+
         <div class="page-wrap">
             <%= yield %>
+            <% unless flash.empty? %>
+            <% flash.each do |f| %>
+             <script type="text/javascript">
+                 <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+                  toastr['<%= type %>']('<%= f[1] %>');
+                  </script>
+                 <% end %>
+            <% end %>
         </div>
         <footer>
             General Assembly is a pioneer in education and career transformation, specializing in today’s most in-demand skills. The leading source for training, staffing, and career transitions, we foster a flourishing community of professionals pursuing
