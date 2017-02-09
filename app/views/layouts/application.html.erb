@@ -35,9 +35,7 @@
                             </a>
                         </li>
                         <% if current_user %>
-                        Signed in as
-                        <%= current_user.first_name %>
-                        <li><%= current_user.username%>!&nbsp;</li>
+
                         <li><%= link_to "Profile", user_path(current_user), class: 'nav_links', style: 'color: white' %></li>
                         <li><%= link_to "Log Out", logout_path %></li>
                     <% else %>
@@ -58,5 +56,4 @@
             careers they love.
         </footer>
     </body>
-
 </html>

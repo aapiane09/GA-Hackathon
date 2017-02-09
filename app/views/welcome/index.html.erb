@@ -1,1 +1,11 @@
-<h1>Hello World!</h1>
+<h1>GA HACKATHON</h1>
+ <p> event info </p>
+
+<h2>SUPER COOL IDEAS!</h2>
+<hr>
+<% @ideas.each do |p| %>
+  <h4><%= link_to "#{p.title}", idea_path(p)%></h4>
+
+  <h4><%= "#{p.content}"%></h4>
+  <hr>
+<% end %>
