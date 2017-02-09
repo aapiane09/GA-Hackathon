@@ -11,7 +11,6 @@ idea_data = []
     content: content,
   }
 end
-idea = Idea.create(idea_data)
 
 Idea.create(idea_data)
 
