@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       user_params = params.require(:user).permit(:email, :password)
       @user = User.confirm(user_params)
       if @user
-        login_url(@user)
+        login(@user)
         # flash[:notice] = "Successfully logged in."
         redirect_to @user
       else

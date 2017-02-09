@@ -13,62 +13,117 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+@import "bootstrap-sprockets";
 
- @import "bootstrap";
- @import "bootstrap-sprockets";
-
- * {
-   margin: 0;
- }
- html, body {
-   height: 100%;
- }
-
- #logo {
-   margin-right: 10px;
-   padding: 0;
-   height: 20px;
- }
-
- #hackathon {
-   color: white;
- }
-
- .page-wrap {
-   min-height: 100%;
-   /* equal to footer height */
-   margin-bottom: -142px;
- }
-
- .page-wrap:after {
-   content: "";
-   display: block;
- }
-
- footer, .page-wrap:after {
-   height: 142px;
- }
-
- footer {
-   color: white;
-   background-color: black;
- }
-
-.col{
-  background-color: green;
-}
-.navbar-default{
-  background-color: black;
+* {
+    margin: 0;
 }
 
-.nav-list {
-  display: inline;
+body,
+html {
+    height: 100%;
 }
 
-li{
-  color: white;
+input {
+    height: 40px;
+    width: 100%;
+    margin: 10px;
+}
+
+footer {
+    height: 142px;
+}
+
+footer {
+    color: white;
+    background-color: black;
+}
+
+li {
+    color: white;
+}
+
+img{
+  margin-left: 20px;
+
+}
+
+.input_field {
+    width: auto;
+}
+
+.login_label {
+    padding-left: 15px;
+}
+
+#logo {
+    color: white;
+    margin-right: 10px;
+    padding: 0;
+    height: 20px;
+}
+
+#hackathon {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    padding-top: 4px;
+}
+#signupheader{
+  font-family: 'Oswald', sans-serif;
+  padding-left: 10px;
+  padding-bottom: 20px;
+}
+
+#login-container{
+  padding-top: 80px;
+}
+.page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -142px;
+}
+
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+
+.col {
+    background-color: green;
+}
+
+.navbar-default {
+    background-color: black;
+}
+
+// .nav-list {
+//     display: inline;
+// }
+.nav_links{
+  text-align: left;
+  padding-left: 50px;
 }
 .nav_links:hover {
-  background-color: white;
-  color: red;
+    background-color: white;
+    color: red;
+}
+// .navbar-header{
+//
+//   position: relative;
+// }
+.logo{
+  height: 35px;
+  width: 35px;
+  padding-top: 8px;
+}
+
+.form-group{
+
+}
+.subtitle {
+  font-family: 'Oswald', sans-serif;
+  padding-left: 10px;
+  padding-bottom: 20px;
 }
