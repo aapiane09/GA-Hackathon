@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
   get '/ideas' => 'ideas#index', as: 'ideas'
   get '/ideas/:id' => 'ideas#show', as: 'idea'
-  get '/ideas/:id/edit' => 'ideas#edit', as: 'edit_idea'
+  post '/ideas/:id/edit' => 'ideas#edit', as: 'edit_idea'
   patch '/ideas/:id' => 'ideas#update'
   delete '/ideas/:id' => 'ideas#destroy'
 
