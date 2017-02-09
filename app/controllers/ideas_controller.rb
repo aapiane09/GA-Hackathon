@@ -9,6 +9,8 @@ class IdeasController < ApplicationController
     @idea = Idea.find_by_id(params[:id])
   end
 
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+
   def new
     @idea = Idea.new
     @event = Event.find_by_id(params[:id])
