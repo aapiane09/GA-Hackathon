@@ -8,12 +8,12 @@
       <%= image_tag "placeholder.png", class:"img-circle img-responsive pic-large" %>
       <div class="cards">
         <div class="card-block">
-          <h4 class="card-title"> <span class="glyphicon glyphicon-user" ></span>Username: <%= @user.username %></h4>
+          <h4 class="card-title"> <span class="glyphicon glyphicon-user" ></span> <%= @user.username %></h4>
           <div class="">
-            <h4>Email: <%= @user.email %></h4>
+            <h4><span class="glyphicon glyphicon-envelope" ></span> <%= @user.email %></h4>
           </div>
           <div class="">
-            <h4>Social: <%= @user.social_url %></h4>
+            <h4><span class="glyphicon glyphicon-link"></span>Social: <%= @user.social_url %></h4>
           </div>
           <div class="">
             <h4>Class: <%= @user.course %></h4>
