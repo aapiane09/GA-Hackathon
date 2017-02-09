@@ -36,13 +36,28 @@ class IdeasController < ApplicationController
     #render :edit
   end
 
+  def update
+    idea_id = params[:id]
+    @idea = Idea.find(idea_id)
+    if @idea.update_attributes(idea_params)
+      flash[:notice] = "Updated successfully."
+      @event = Idea.find_by_id(params[:id]).event
+      redirect_to event_path(@event)
+    else
+      @idea.errors.full_messages.each do |message|
+        flash[:error] = message
+      end
+      redirect_to edit_idea_path(@idea)
+    end
+  end
+
   def destroy
-  idea_id = params[:id]
-  @idea = Idea.find(idea_id)
-  @event = Idea.find_by_id(params[:id]).event
-  @idea.destroy
-  redirect_to event_path(@event)
-end
+    idea_id = params[:id]
+    @idea = Idea.find(idea_id)
+    @event = Idea.find_by_id(params[:id]).event
+    @idea.destroy
+    redirect_to event_path(@event)
+  end
 
   private
   def idea_params
