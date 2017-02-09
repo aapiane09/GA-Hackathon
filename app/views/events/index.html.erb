@@ -1,0 +1,5 @@
+<hr>
+<% @events.each do |p| %>
+  <h4><%= link_to "#{p.event_name}", event_path(p) %></h4>
+  <br>
+<% end %>
