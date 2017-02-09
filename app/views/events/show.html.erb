@@ -1,0 +1,10 @@
+<h2><%= @event.event_name %></h2>
+
+<h2>SUPER COOL IDEAS!</h2>
+<hr>
+<% @event.ideas.each do |idea| %>
+  <h4><%= link_to "#{idea.title}", idea_path(idea)%></h4>
+
+  <h4><%= "#{idea.content}"%></h4>
+  <hr>
+<% end %>
