@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Add your best idea!</h1>
+
+  <%= form_for [@event, @idea], url: create_idea_path do |f|%>
+    <div>
+      <%= f.text_field :title, placeholder: "Title" %>
+    </div>
+    <div>
+      <%= f.text_field :content, placeholder: "Content" %>
+    </div>
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>

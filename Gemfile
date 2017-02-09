@@ -43,6 +43,7 @@ gem 'toastr-rails'
 gem 'ffaker'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
+
 # easily upload and store files from the user
 gem 'carrierwave', '~> 1.0'
 # include a thumbnail
