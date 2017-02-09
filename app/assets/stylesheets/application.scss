@@ -17,6 +17,7 @@
 @import "bootstrap-sprockets";
 
 * {
+    border: dashed 1px black;
     margin: 0;
 }
 
@@ -126,4 +127,9 @@ img{
   font-family: 'Oswald', sans-serif;
   padding-left: 10px;
   padding-bottom: 20px;
+}
+.pic-large{
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
 }
