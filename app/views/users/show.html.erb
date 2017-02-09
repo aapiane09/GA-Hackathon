@@ -1,23 +1,28 @@
 <!-- USER PROFILE PAGE -->
 
 <div class="container">
-  <h1>Welcome, <%= @user.first_name %> <%= @user.last_name %>!</h1>
-  <h4><%= @user.username %>!</h4>
-  <h4><%= @user.email %>!</h4>
-  <h4><%= @user.social_url %>!</h4>
-  <h4><%= @user.course %>!</h4>
+  <div class="row">
+    <div class="col-3">
+      <h1>Welcome, <%= @user.first_name %> <%= @user.last_name %>!</h1>
+      <hr>
+      <h4>Username: <%= @user.username %></h4>
+      <h4>Email: <%= @user.email %></h4>
+      <h4>Social: <%= @user.social_url %></h4>
+      <h4>Class: <%= @user.course %></h4>
 
-  <% if current_user == @user %>
-    <%= button_to "edit", edit_user_path(@user), :method => :get %>
-  <% end %>
-
-
-  <h2>Your IDEAS</h2>
-
-      <% @user.ideas.each do |p| %>
-          <h4><%= link_to "#{p.title}", idea_path(p)%></h4>
-          <p><%=p.created_at.strftime("%b %d, %Y")%></p>
-          <p style="margin-bottom: 40px;"><%= truncate p.content, length: 160 %></p>
-
+      <% if current_user == @user %>
+        <%= button_to "Edit Profile", edit_user_path(@user), :method => :get %>
       <% end %>
+   </div>
+    <div class="col-7">
+      <h2>Your IDEAS</h2>
+
+          <% @user.ideas.each do |p| %>
+              <h4><%= link_to "#{p.title}", idea_path(p)%></h4>
+              <p><%=p.created_at.strftime("%b %d, %Y")%></p>
+              <p style="margin-bottom: 40px;"><%= truncate p.content, length: 160 %></p>
+
+          <% end %>
+    </div>
+  </div>
 </div>
