@@ -2,25 +2,25 @@
 
 <%= form_for @user do |f| %>
   <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
+    <%= f.text_field :first_name, placeholder: "First Name", :required => 'required' %>
   </div>
   <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
+    <%= f.text_field :last_name, placeholder: "Last Name", :required => 'required' %>
   </div>
   <div>
-    <%= f.email_field :email, placeholder: "Email" %>
+    <%= f.email_field :email, placeholder: "Email", :required => 'required' %>
   </div>
   <div>
-    <%= f.text_field :username, placeholder: "Username" %>
+    <%= f.text_field :username, placeholder: "Username", :required => 'required' %>
   </div>
   <div>
-    <%= f.password_field :password, placeholder: "Password" %>
+    <%= f.password_field :password, placeholder: "Password", :required => 'required' %>
   </div>
   <div>
     <%= f.text_field :social_url, placeholder: "Social" %>
   </div>
   <div>
-    <%= f.text_field :course, placeholder: "Course" %>
+    <%= f.text_field :course, placeholder: "Course", :required => 'required' %>
   </div>
   <%= f.submit "Sign Up" %>
 <% end %>
