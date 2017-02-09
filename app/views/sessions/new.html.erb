@@ -1,12 +1,29 @@
-<h4 id="signupheader">Login</h4>
-  <%= form_for @user, :url => sessions_path(@user) do |f| %>
-    <div>
-      <%= f.email_field :email, placeholder: " Email", id:"form" %>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-4 col-xs-4">
+
     </div>
-    <div>
-      <%= f.password_field :password, placeholder: " Password", id:"form" %>
+    <div class="form-group col-md-4 col-xs-4">
+      <div class="row">
+        <h4 id="signupheader">Login</h4>
+      </div>
+        <%= form_for @user, :url => sessions_path(@user) do |f| %>
+          Email
+          <div class="">
+            <%= f.email_field :email, placeholder: " Email", id:"form" %>
+          </div>
+          Password
+          <div class="">
+            <%= f.password_field :password, placeholder: " Password", id:"form" %>
+          </div>
+          <div class="">
+            <%= f.submit "Log In", class:'btn btn-danger btn-block' %>
+          </div>
+      <% end %>
     </div>
-    <div>
-      <%= f.submit "Log In" %>
+    <div class="col-md-4 col-xs-4">
+
     </div>
-<% end %>
+  </div>
+</div>
