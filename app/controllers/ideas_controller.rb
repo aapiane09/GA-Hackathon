@@ -1,8 +1,8 @@
 class IdeasController < ApplicationController
 
   def index
-    @event = Event.find_by_id(params[:id])
-    @ideas = @event.ideas
+    @user = User.find(params[:user_id])
+    @events = @user.events
   end
 
   def show
@@ -11,14 +11,23 @@ class IdeasController < ApplicationController
 
   def new
     @idea = Idea.new
+    @event = Event.find_by_id(params[:id])
   end
 
   def create
-    # new_idea = Idea.new(idea_params)
-    # @event = Event.find_by_id(params[:event_id])
-    # new_idea.user = current_user
-    # @idea = Idea.create(idea_params)
-    # redirect_to idea_path
+      new_idea = Idea.new(idea_params)
+      @event = Event.find_by_id(params[:id])
+      new_idea.user = current_user
+      new_idea.event = @event
+      @idea = new_idea.save
+      if @idea
+        redirect_to @event
+      else
+        new_idea.errors.full_messages.each do |message|
+          flash[:error] = message
+        end
+         redirect_to new_idea_path
+       end
   end
 
   def edit
@@ -27,6 +36,32 @@ class IdeasController < ApplicationController
     #render :edit
   end
 
-  def create
+  def update
+    idea_id = params[:id]
+    @idea = Idea.find(idea_id)
+    if @idea.update_attributes(idea_params)
+      flash[:notice] = "Updated successfully."
+      @event = Idea.find_by_id(params[:id]).event
+      redirect_to event_path(@event)
+    else
+      @idea.errors.full_messages.each do |message|
+        flash[:error] = message
+      end
+      redirect_to edit_idea_path(@idea)
+    end
   end
+
+  def destroy
+    idea_id = params[:id]
+    @idea = Idea.find(idea_id)
+    @event = Idea.find_by_id(params[:id]).event
+    @idea.destroy
+    redirect_to event_path(@event)
+  end
+
+  private
+  def idea_params
+    params.require(:idea).permit(:title, :content)
+  end
+
 end

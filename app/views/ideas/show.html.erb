@@ -1,2 +1,9 @@
-<h2><%= @idea.title %></h2>
-<h2><%= @idea.content %></h2>
+<div class="container">
+  <h2><%= @idea.title %></h2>
+  <h2><%= @idea.content %></h2>
+
+  <% if current_user == @idea.user %>
+  <p><%= button_to "edit ", edit_idea_path(@idea) %>
+  <%= button_to "delete", idea_path(@idea), method: :delete, data: { confirm: "Are you sure?" } %></p>
+  <% end %>
+</div>
