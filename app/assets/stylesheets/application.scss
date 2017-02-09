@@ -44,6 +44,11 @@ li {
     color: white;
 }
 
+img{
+  margin-left: 20px;
+
+}
+
 .input_field {
     width: auto;
 }
@@ -62,8 +67,19 @@ li {
 #hackathon {
     color: white;
     font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    position: absolute;
+    padding-top: 4px;
+}
+#signupheader{
+  font-family: 'Oswald', sans-serif;
+  padding-left: 10px;
+  padding-bottom: 20px;
 }
 
+#login-container{
+  padding-top: 80px;
+}
 .page-wrap {
     min-height: 100%;
     /* equal to footer height */
@@ -83,11 +99,27 @@ li {
     background-color: black;
 }
 
-.nav-list {
-    display: inline;
+// .nav-list {
+//     display: inline;
+// }
+.nav_links{
+  text-align: left;
+  padding-left: 50px;
 }
-
 .nav_links:hover {
     background-color: white;
     color: red;
+}
+// .navbar-header{
+//
+//   position: relative;
+// }
+.logo{
+  height: 35px;
+  width: 35px;
+  padding-top: 8px;
+}
+
+.form-group{
+
 }
