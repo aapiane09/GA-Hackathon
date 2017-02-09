@@ -61,6 +61,12 @@ class IdeasController < ApplicationController
     redirect_to event_path(@event)
   end
 
+  def upvote
+    @idea = Idea.find(params[:id])
+    @idea.upvote_by current_user
+    redirect_to :back
+  end
+
   private
   def idea_params
     params.require(:idea).permit(:title, :content)

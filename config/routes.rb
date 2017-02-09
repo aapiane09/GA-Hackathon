@@ -37,4 +37,10 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  resources :ideas do
+    member do
+      put "like", to: "ideas#upvote"
+    end
+  end
+
 end
