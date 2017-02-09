@@ -15,7 +15,8 @@
                 <div class="navbar-header">
                     <div class="navbar-brand">
                         <ul class="nav navbar-nav navbar-left nav-list">
-                            <li><%= image_tag 'ga_logo1.png', id: "logo" %> Hackathon</li>
+                            <li><%= image_tag 'ga_logo1.png', id: "logo" %>
+                                Hackathon</li>
                         </ul>
                     </div>
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -28,28 +29,34 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active">
+                        <li>
                             <a href="#">About
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">Login</a>
-                        </li>
-                        <li>
-                            <a href="#">Logout</a>
-                        </li>
+                        <% if current_user %>
+                        Signed in as
+                        <%= current_user.first_name %>
+                        <li><%= current_user.username%>!&nbsp;</li>
+                        <li><%= link_to "Profile", user_path(current_user), class: 'nav_links', style: 'color: white' %></li>
+                        <li><%= link_to "Log Out", logout_path %></li>
+                    <% else %>
+                        <li><%= link_to "Sign Up", new_user_path %></li>
+                        <li><%= link_to "Log In", login_path, class: 'nav_links', style: 'color: white' %></li>
+                        <% end %>
                     </ul>
-                </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <div class="page-wrap">
+            <%= yield %>
+        </div>
+        <footer>
+            General Assembly is a pioneer in education and career transformation, specializing in today’s most in-demand skills. The leading source for training, staffing, and career transitions, we foster a flourishing community of professionals pursuing
+            careers they love.
+        </footer>
+    </body>
 
-    <div class="page-wrap">
-        <%= yield %>
-    </div>
-    <footer>
-        General Assembly is a pioneer in education and career transformation, specializing in today’s most in-demand skills. The leading source for training, staffing, and career transitions, we foster a flourishing community of professionals pursuing
-        careers they love.
-    </footer>
-</body>
 </html>
