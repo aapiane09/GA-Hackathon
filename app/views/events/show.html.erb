@@ -1,12 +1,17 @@
-<h2><%= @event.event_name %></h2>
+<!-- SHOW ONE EVENT -->
 
-<%= button_to "Add Idea", new_idea_path(@event)%>
+<div class="container">
 
-<h2>SUPER COOL IDEAS!</h2>
-<hr>
-<% @event.ideas.each do |idea| %>
-  <h4><%= link_to "#{idea.title}", idea_path(idea)%></h4>
+  <h2><%= @event.event_name %></h2>
 
-  <h4><%= "#{idea.content}"%></h4>
+  <%= button_to "Add Idea", new_idea_path(@event)%>
+
+  <h2>SUPER COOL IDEAS!</h2>
   <hr>
-<% end %>
+  <% @event.ideas.each do |idea| %>
+    <h4><%= link_to "#{idea.title}", idea_path(idea)%></h4>
+
+    <h4><%= "#{idea.content}"%></h4>
+    <hr>
+  <% end %>
+</div>
