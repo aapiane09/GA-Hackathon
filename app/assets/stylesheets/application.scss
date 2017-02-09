@@ -15,11 +15,15 @@
  */
 @import "bootstrap";
 @import "bootstrap-sprockets";
-
-* {
-    border: dashed 1px black;
-    margin: 0;
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/assets/glyphicons-halflings-regular.eot');
+  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+// * {
+//     border: dashed 1px black;
+//     margin: 0;
+// }
 
 body,
 html {
@@ -32,13 +36,12 @@ input {
     margin: 10px;
 }
 
-footer {
-    height: 142px;
-}
 
 footer {
     color: white;
     background-color: black;
+    bottom: 0;
+    position: fixed;
 }
 
 li {
@@ -129,7 +132,15 @@ img{
   padding-bottom: 20px;
 }
 .pic-large{
+  margin: 10px auto;
+}
+.card-title{
   height: 100%;
   width: 100%;
-  margin: 0 auto;
+}
+
+.cards{
+  margin-top: 10px;
+  background-color: #DADADA;
+  height: 200px;
 }
