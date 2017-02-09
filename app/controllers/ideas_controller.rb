@@ -1,10 +1,5 @@
 class IdeasController < ApplicationController
 
-  # def index
-  #   @event = Event.find_by_id(params[:id])
-  #   @ideas = @event.ideas
-  # end
-
   def index
     @user = User.find(params[:user_id])
     @events = @user.events
@@ -33,7 +28,6 @@ class IdeasController < ApplicationController
         end
          redirect_to new_idea_path
        end
-
   end
 
   def edit
@@ -41,6 +35,14 @@ class IdeasController < ApplicationController
     @idea = Idea.find_by_id(idea_id)
     #render :edit
   end
+
+  def destroy
+  idea_id = params[:id]
+  @idea = Idea.find(idea_id)
+  @event = Idea.find_by_id(params[:id]).event
+  @idea.destroy
+  redirect_to event_path(@event)
+end
 
   private
   def idea_params

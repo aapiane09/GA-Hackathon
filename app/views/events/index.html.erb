@@ -1,5 +1,9 @@
-<hr>
-<% @events.each do |p| %>
-  <h4><%= link_to "#{p.event_name}", event_path(p) %></h4>
-  <br>
-<% end %>
+<!-- SHOW ALL EVENTS -->
+<div class="container">
+
+  <% @events.each do |p| %>
+    <h4><%= link_to "#{p.event_name}", event_path(p) %></h4>
+    <hr>
+    <br>
+  <% end %>
+</div>
