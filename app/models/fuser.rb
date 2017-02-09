@@ -1,0 +1,2 @@
+class Fuser < ApplicationRecord
+end
