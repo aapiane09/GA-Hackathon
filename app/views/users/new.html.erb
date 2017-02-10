@@ -47,6 +47,10 @@
             <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
           </div>
         </div>
+        <div class="col-md-6">
+          <%= f.label :photo %>
+          <%= f.file_field :photo %>
+        </div>
         <%= f.submit "Sign Up", class: "btn btn-danger" %>
       <% end %>
 
