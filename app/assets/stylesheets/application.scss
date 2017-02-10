@@ -14,12 +14,17 @@
  *= require_self
  *= require toastr
  */
-@import "bootstrap";
 @import "bootstrap-sprockets";
-
-* {
-    margin: 0;
+@import "bootstrap";
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: asset-url('glyphicons-halflings-regular.eot');
+  src: asset-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), asset-url('glyphicons-halflings-regular.woff') format('woff'), asset-url('glyphicons-halflings-regular.ttf') format('truetype'), asset-url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
+// * {
+//     border: dashed 1px black;
+//     margin: 0;
+// }
 
 body,
 html {
@@ -32,13 +37,12 @@ input {
     margin: 10px;
 }
 
-footer {
-    height: 142px;
-}
 
 footer {
     color: white;
     background-color: black;
+    bottom: 0;
+    position: fixed;
 }
 
 li {
@@ -127,4 +131,34 @@ img{
   font-family: 'Oswald', sans-serif;
   padding-left: 10px;
   padding-bottom: 20px;
+  float: left;
+}
+.pic-large{
+  margin: 10px auto;
+}
+.card-title{
+  height: 100%;
+  width: 100%;
+}
+
+.cards{
+  margin-top: 10px;
+  background-color: #DADADA;
+  height: 200px;
+}
+.glyphicon-ring {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3px solid white;
+  display: inline-table;
+  text-align: center;
+}
+.glyphicon{
+  margin: 8px;
+}
+.idea-pic{
+  height: 50px;
+  width: 50px;
+  float: left;
 }
