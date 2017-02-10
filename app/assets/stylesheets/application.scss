@@ -21,10 +21,6 @@
   src: asset-url('glyphicons-halflings-regular.eot');
   src: asset-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), asset-url('glyphicons-halflings-regular.woff') format('woff'), asset-url('glyphicons-halflings-regular.ttf') format('truetype'), asset-url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
-// * {
-//     border: dashed 1px black;
-//     margin: 0;
-// }
 
 body,
 html {
@@ -89,9 +85,7 @@ img{
   padding-bottom: 20px;
 }
 
-#login-container{
-  padding-top: 80px;
-}
+
 .page-wrap {
     min-height: 100%;
     /* equal to footer height */
@@ -111,9 +105,7 @@ img{
     background-color: black;
 }
 
-// .nav-list {
-//     display: inline;
-// }
+
 .nav_links{
   text-align: left;
   padding-left: 50px;
@@ -130,15 +122,13 @@ img{
   border-color: black;
 }
 
+
 .logo{
   height: 100%;
   width: 35px;
   margin-top: -23px;
 }
 
-.form-group{
-
-}
 .subtitle {
   font-family: 'Oswald', sans-serif;
   padding-left: 10px;
