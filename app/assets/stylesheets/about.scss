@@ -6,16 +6,29 @@
   height: 600px;
 }
 
+.about-user-image {
+  height: 150px;
+  width: 150px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
 .affix {
   position: fixed;
   top: 0;
   width: 100%;
   }
 
-  .affix + .container-fluid {
-  padding-top: 100px;
-  }
+.affix + .container-fluid {
+  display: block;
+  visibility: hidden;
+}
 
-  .card-group {
-    display: flex;
-  }
+.content {
+  padding-top: 5px;
+}
+
+.card-group {
+  display: flex;
+}
