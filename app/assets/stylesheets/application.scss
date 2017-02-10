@@ -33,12 +33,16 @@ input {
     margin: 10px;
 }
 
+.page-wrap {
+  height: 90vh;
+}
 
 footer {
     color: white;
     background-color: black;
     bottom: 0;
-    position: fixed;
+    height: 100px;
+    margin-top: 10%;
 }
 
 li {
@@ -57,20 +61,30 @@ img{
 .login_label {
     padding-left: 15px;
 }
-
-#logo {
-    color: white;
-    margin-right: 10px;
-    padding: 0;
-    height: 20px;
-}
+//
+// #logo {
+//     margin-right: 10px;
+//     padding: 0;
+//     margin-top: -5px;
+// }
 
 #hackathon {
     color: white;
     font-family: 'Oswald', sans-serif;
-    font-size: 25px;
-    padding-top: 4px;
+    font-size: 35px;
+    padding-bottom: 15px;
 }
+
+.logolink {
+  text-decoration: none;
+}
+
+#signupheader{
+  font-family: 'Oswald', sans-serif;
+  padding-left: 10px;
+  padding-bottom: 20px;
+}
+
 
 .page-wrap {
     min-height: 100%;
@@ -100,11 +114,19 @@ img{
     background-color: white;
     color: red;
 }
+.navbar {
+  border-radius: 0px;
+}
+
+.navbar-default{
+  border-color: black;
+}
+
 
 .logo{
-  height: 35px;
+  height: 100%;
   width: 35px;
-  padding-top: 8px;
+  margin-top: -23px;
 }
 
 .subtitle {
