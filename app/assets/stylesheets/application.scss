@@ -130,6 +130,7 @@ img{
   font-family: 'Oswald', sans-serif;
   padding-left: 10px;
   padding-bottom: 20px;
+  float: left;
 }
 .pic-large{
   margin: 10px auto;
@@ -154,4 +155,9 @@ img{
 }
 .glyphicon{
   margin: 8px;
+}
+.idea-pic{
+  height: 50px;
+  width: 50px;
+  float: left;
 }
