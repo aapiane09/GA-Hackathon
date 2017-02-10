@@ -1,9 +1,27 @@
 <div class="container">
-  <h2><%= @idea.title %></h2>
-  <h2><%= @idea.content %></h2>
+  <div class="col-md-2 col-xs-2">
+  </div>
+  <div class="col-md-8 col-md-8">
+    <div class="row">
+      <div class="col-md-1 col-md-1">
 
-  <% if current_user == @idea.user %>
-  <p><%= button_to "edit ", edit_idea_path(@idea) %>
-  <%= button_to "delete", idea_path(@idea), method: :delete, data: { confirm: "Are you sure?" } %></p>
-  <% end %>
-</div>
+        <%= image_tag 'idea.png', class:"idea-pic" %>
+      </div>
+      <div class="col-md-11 col-md-11">
+
+        <h1 class="subtitle">IDEA</h1>
+      </div>
+
+    </div>
+    <h2><%= @idea.title.titleize %></h2>
+    <p><%= @idea.content %></p>
+
+    <% if current_user == @idea.user %>
+    <p><%= button_to "edit ", edit_idea_path(@idea), class:"btn btn-danger" %>
+    <%= button_to "delete", idea_path(@idea), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger btn-block" %></p>
+    <% end %>
+    </div>
+  </div>
+  <div class="col-md-2 col-xs-2">
+
+  </div>
