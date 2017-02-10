@@ -6,16 +6,19 @@
 
   <%= button_to "Add Idea", new_idea_path(@event), method: "get" %>
 
-  <p>new thing</p>
+  <% if !current_user %>
 
-  <%= form_for([@event, @event.users.build]) do |f| %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.submit "RSVP", class: "btn btn-default" %>
+  <% else %>
+    <p>Come to the event!</p>
+    <%= form_for([@event, @event.users.build]) do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit "RSVP", class: "btn btn-default" %>
+    <% end %>
+  <% end %>
 
 <p>Attendance</p>
     <%= @event.users.count %>
 
-  <% end %>
 
 
 
