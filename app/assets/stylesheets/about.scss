@@ -3,9 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .about-image {
   background-image: url("aboutbackground.jpg");
+  height: 600px;
 }
 
 .affix {
+  position: fixed;
   top: 0;
   width: 100%;
   }
