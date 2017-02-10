@@ -1,10 +1,12 @@
 <!-- SHOW ALL EVENTS -->
 <div class="container">
 
+  <h1>Upcoming Hackathons</h1>
+  <br>
   <% @events.each do |p| %>
     <h4><%= link_to "#{p.event_name}", event_path(p) %></h4>
     <hr>
     <br>
   <% end %>
-  
+
 </div>

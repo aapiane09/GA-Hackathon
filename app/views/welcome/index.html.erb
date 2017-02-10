@@ -8,7 +8,6 @@
   <hr>
   <% @ideas.each do |p| %>
     <h4><%= link_to "#{p.title}", idea_path(p)%></h4>
-
     <h4><%= "#{p.content}"%></h4>
     <hr>
   <% end %>
