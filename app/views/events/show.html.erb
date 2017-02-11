@@ -6,7 +6,7 @@
 
   <%= button_to "Add Idea", new_idea_path(@event), method: "get" %>
 
-  <p>Come to the event!</p>
+
   <% if !current_user %>
     <%= form_for([@event, @event.users.build]) do |f| %>
       <%= f.submit "RSVP", class: "btn btn-default" %>
@@ -36,6 +36,7 @@
         Submitted <%= time_ago_in_words(idea.created_at) %> ago
         by <%= idea.user.username  %>
       </h4>
+      <h5> <%= idea.content  %> </h5>
       <%= link_to like_idea_path(idea), method: :put do %>
         Upvote
         <%= idea.get_upvotes.size %>
