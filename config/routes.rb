@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'welcome#index'
+  get '/about' => 'about#index', as: 'about'
+
+
+
 
   # USER ROUTES
   get '/users/new' => 'users#new', as: 'new_user'
@@ -19,16 +23,16 @@ Rails.application.routes.draw do
   patch '/events/:id' => 'events#update'
   delete '/events/:id' => 'events#destroy'
   # get '/events/:id/ideas' => 'ideas#index', as: 'ideas'
-
+  post '/events/:event_id/users' =>  'events_users#build'
 
 
   # IDEAS ROUTES
-  post '/events/:id/ideas/new' => 'ideas#new', as: 'new_idea'
+  get '/events/:id/ideas/new' => 'ideas#new', as: 'new_idea'
   post '/events/:id/ideas' => 'ideas#create', as: 'create_idea'
 
   get '/ideas' => 'ideas#index', as: 'ideas'
   get '/ideas/:id' => 'ideas#show', as: 'idea'
-  get '/ideas/:id/edit' => 'ideas#edit', as: 'edit_idea'
+  post '/ideas/:id/edit' => 'ideas#edit', as: 'edit_idea'
   patch '/ideas/:id' => 'ideas#update'
   delete '/ideas/:id' => 'ideas#destroy'
 
@@ -36,5 +40,16 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  resources :ideas do
+    member do
+      put "like", to: "ideas#upvote"
+    end
+  end
+
+  resources :events, except: :create do
+    resources :users
+
+  end
 
 end

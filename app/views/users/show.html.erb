@@ -1,23 +1,70 @@
 <!-- USER PROFILE PAGE -->
 
 <div class="container">
-  <h1>Welcome, <%= @user.first_name %> <%= @user.last_name %>!</h1>
-  <h4><%= @user.username %>!</h4>
-  <h4><%= @user.email %>!</h4>
-  <h4><%= @user.social_url %>!</h4>
-  <h4><%= @user.course %>!</h4>
+  <div class="row">
 
-  <% if current_user == @user %>
-    <%= button_to "edit", edit_user_path(@user), :method => :get %>
-  <% end %>
+    <div class="col-md-3 col-xs-3">
+      <hr>
+      <%= image_tag @user.photo, class:"img-circle img-responsive pic-large" %>
+      <div class="cards">
+        <div class="card-block">
+          <h4 class="card-title"> <span class="glyphicon glyphicon-user" ></span> <%= @user.username %></h4>
+          <div class="">
+            <h4><span class="glyphicon glyphicon-envelope" ></span> <%= @user.email %></h4>
+          </div>
+          <div class="">
+            <h4><span class="glyphicon glyphicon-link"></span>Social: <%= @user.social_url %></h4>
+          </div>
+          <div class="">
+            <h4>Class: <%= @user.course %></h4>
+          </div>
+        </div>
+      </div>
 
-
-  <h2>Your IDEAS</h2>
-
-      <% @user.ideas.each do |p| %>
-          <h4><%= link_to "#{p.title}", idea_path(p)%></h4>
-          <p><%=p.created_at.strftime("%b %d, %Y")%></p>
-          <p style="margin-bottom: 40px;"><%= truncate p.content, length: 160 %></p>
-
+      <% if current_user == @user %>
+        <%= button_to "Edit Profile", edit_user_path(@user), :method => :get, class:"btn btn-danger pic-large" %>
       <% end %>
-</div>
+
+    </div>
+    <div class="col-md-1 col-xs-1">
+
+    </div>
+    <div class="col-md-8 col-xs-8 subtitle">
+      <div class="row">
+        <h1>Welcome, <%= @user.first_name %> <%= @user.last_name %>!</h1>
+
+      </div>
+      <div class="row">
+
+      </div>
+      <div class="row">
+        <h2>My Ideas</h2>
+        <br>
+
+        <% @user.ideas.each do |p| %>
+        <h4><%= link_to "#{p.title}", idea_path(p)%></h4>
+        <p><%=p.created_at.strftime("%b %d, %Y")%></p>
+        <p style="margin-bottom: 40px;"><%= truncate p.content, length: 160 %></p>
+
+        <% end %>
+
+      </div>
+      <div class="row">
+        <h2>My Events</h2>
+          <% @user.events.each do |p| %>
+          <h4><%= link_to "#{p.event_name}", event_path(p)%></h4>
+          <!-- <p><%=p.created_at.strftime("%b %d, %Y")%></p> -->
+          <% end %>
+      </div>
+
+   </div>
+   <div class="col-md-2 col-xs-2">
+
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-md-10 col-md-10">
+
+   </div>
+ </div>
+</div><!--CONTAINER  -->
