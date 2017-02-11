@@ -8,26 +8,22 @@
   <div class="row">
 
     <div class="col-md-3 col-md-push-8">
-      <h4><%= "#{p.date}" %></h4>
+        <h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span><%= "#{p.date}" %></h4>
+
+
     </div>
 
     <div class="col-md-6 col-md-push-1">
-
         <h4><%= link_to "#{p.event_name}", event_path(p) %></h4>
         <br>
         <h4><%= "#{p.content}" %></h4>
         <br>
     </div>
 
-
     <div class="col-md-3 col-md-pull-8">
       <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" class="img-thumbnail">
     </div>
-
-
-
   </div>
   <hr>
     <% end %>
-
 </div>
