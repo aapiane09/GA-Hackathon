@@ -1,27 +1,26 @@
 <!-- SHOW ALL EVENTS -->
-<div class="container">
 
-  <h1>Upcoming Hackathons</h1>
+
+  <h1 id="eventindexheader">Upcoming Hackathons</h1>
   <br>
-
+<div class="container">
   <% @events.each do |p| %>
   <div class="row">
 
     <div class="col-md-3 col-md-push-8">
+        <br>
         <h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span><%= "#{p.date}" %></h4>
-
-
     </div>
 
     <div class="col-md-6 col-md-push-1">
-        <h4><%= link_to "#{p.event_name}", event_path(p) %></h4>
+        <h3 class="event_title"><%= link_to "#{p.event_name}", event_path(p) %></h3>
         <br>
         <h4><%= "#{p.content}" %></h4>
         <br>
     </div>
 
-    <div class="col-md-3 col-md-pull-8">
-      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" class="img-thumbnail">
+    <div class="col-md-3 col-md-pull-9">
+      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" class="">
     </div>
   </div>
   <hr>
