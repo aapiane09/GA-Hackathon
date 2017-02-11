@@ -22,8 +22,8 @@
       <% end %>
    </div>
 
-    <div class="col-md-3">
-      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" class="">
+    <div class="col-md-3" id="eventshowsidebar">
+      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" id="eventshowimage" height="250" width="310">
       <%= button_to "Add Idea", new_idea_path(@event), class: "btn btn-primary pic-large", method: "get" %>
 
       <% if !current_user %>
@@ -42,5 +42,5 @@
       <% end %>
       <h3>Hacker Count: <%= @event.users.count %> </h3>
   </div>
-</div>
+ </div>
 </div>
