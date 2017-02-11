@@ -1,32 +1,29 @@
 <!-- Edit User Profile -->
-
- <div class="container">
-   <div class="row">
-         <br>
-         <br>
-       <div>
-         <h4 id="signupheader">Edit Profile</h4>
-         <%= form_for @user do |f| %>
-        <div>
-          <%= f.text_field :first_name, placeholder: "First Name", id:"form" %>
-        </div>
-        <div>
-          <%= f.text_field :last_name, placeholder: "Last Name", id:"form" %>
-        </div>
-        <div>
-          <%= f.email_field :email, placeholder: "Email" %>
-        </div>
-        <div>
-          <%= f.text_field :social_url, placeholder: "Social" %>
-        </div>
-        <div>
-          <%= f.text_field :course, placeholder: "Course" %>
-        </div>
-        <div class="">
-          <%= f.file_field :photo %>
-        </div>
-          <%= f.submit "Save" %>
-        <% end %>
-    </div>
+ <div class="row">
+       <br>
+       <br>
+     <div>
+       <h4 id="signupheader">Edit Profile</h4>
+       <%= form_for @user do |f| %>
+      <div>
+        <%= f.text_field :first_name, placeholder: "First Name", id:"form" %>
+      </div>
+      <div>
+        <%= f.text_field :last_name, placeholder: "Last Name", id:"form" %>
+      </div>
+      <div>
+        <%= f.email_field :email, placeholder: "Email" %>
+      </div>
+      <div>
+        <%= f.text_field :social_url, placeholder: "Social" %>
+      </div>
+      <div>
+        <%= f.text_field :course, placeholder: "Course" %>
+      </div>
+      <div class="">
+        <%= f.file_field :photo %>
+      </div>
+        <%= f.submit "Save" %>
+      <% end %>
   </div>
 </div>

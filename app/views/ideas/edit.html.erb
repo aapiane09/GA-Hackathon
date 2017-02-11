@@ -1,16 +1,10 @@
 <!-- EDIT IDEAS -->
-<div class="container">
-  <h2><%= @idea.title %></h2>
-
-
-  <div class="row">
-
-    <%= form_for @idea do |f| %>
-
-      <div>
-        <%= f.text_area :content, placeholder: "Content" %>
-      </div>
-      <%= f.submit "Submit" %>
-    <% end %>
-  </div>
+<h2><%= @idea.title %></h2>
+<div class="row">
+  <%= form_for @idea do |f| %>
+    <div>
+      <%= f.text_area :content, placeholder: "Content" %>
+    </div>
+    <%= f.submit "Submit" %>
+  <% end %>
 </div>
