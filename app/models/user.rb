@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
+  mount_uploader :photo, PhotoUploader
+
   has_many :ideas, dependent: :destroy
   has_many :events_users
   has_many :events, through: :events_users
