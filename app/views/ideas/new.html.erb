@@ -3,10 +3,10 @@
 
   <%= form_for [@event, @idea], url: create_idea_path do |f|%>
     <div>
-      <%= f.text_field :title, placeholder: "Title" %>
+      <%= f.text_field :title, placeholder: "Title", required: true %>
     </div>
     <div>
-      <%= f.text_field :content, placeholder: "Content" %>
+      <%= f.text_field :content, placeholder: "Content", required: true %>
     </div>
     <%= f.submit "Submit" %>
   <% end %>

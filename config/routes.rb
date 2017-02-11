@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+
+
+
   # USER ROUTES
   get '/users/new' => 'users#new', as: 'new_user'
   post '/users' => 'users#create'
@@ -19,11 +22,11 @@ Rails.application.routes.draw do
   patch '/events/:id' => 'events#update'
   delete '/events/:id' => 'events#destroy'
   # get '/events/:id/ideas' => 'ideas#index', as: 'ideas'
-
+  post '/events/:event_id/users' =>  'events_users#build'
 
 
   # IDEAS ROUTES
-  post '/events/:id/ideas/new' => 'ideas#new', as: 'new_idea'
+  get '/events/:id/ideas/new' => 'ideas#new', as: 'new_idea'
   post '/events/:id/ideas' => 'ideas#create', as: 'create_idea'
 
   get '/ideas' => 'ideas#index', as: 'ideas'
@@ -36,5 +39,16 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  resources :ideas do
+    member do
+      put "like", to: "ideas#upvote"
+    end
+  end
+
+  resources :events, except: :create do
+    resources :users
+
+  end
 
 end

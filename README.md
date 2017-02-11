@@ -1,4 +1,4 @@
-# GA-Hackathon - [Live Link](https://google.com)
+# GA-Hackathon - [Live Link](https://ga-hackathon.herokuapp.com/)
 
 <img src="https://cloud.githubusercontent.com/assets/7833470/10423298/ea833a68-7079-11e5-84f8-0a925ab96893.png" width="100">
 
@@ -6,17 +6,17 @@
 
 <i> Full Stack App built for our WDI Group Project </i>
 
-Vagabond is a simple way for users to share tips (AKA posts) about their favorite locations around the world.
+GA-Hackathon was built as a awesome thing to do things!
 
-Users will be able to create a profile, make new posts and view a record of their travels.
+Users will be able to create a profile, create new ideas, upvote their favorite ideas and RSVP for hackathon events.
 
 
 Feel free to fork / star / watch for your own personal use.
 
-See the published project at [test.herokuapp.com](https://google.com/)!
+See the published project at [ga-hackathon.herokuapp.com](https://ga-hackathon.herokuapp.com/)!
 
 #Entity-Relationship Diagram
-<img src="http://i.imgur.com/ZOUqgqM.png" width="800">
+<img src="http://i.imgur.com/EvfVSwy.png" width="800">
 
 
 #Technologies Used   
@@ -62,6 +62,9 @@ def activity_count
 <img src="http://i.imgur.com/j9GVwR7.png" width="600">
 <hr>
 <img src="http://i.imgur.com/ReJXa7Q.png" width="600">
+
+## Trello Board
+[Wireframes, Database models & Sprint Planning](https://trello.com/b/O2z9teqw/project-2)
 
 ### Contributors
 [Greice Silva](https://github.com/greicens), [Zach Cusimano](https://github.com/c00z), [Alex Piane](https://github.com/aapiane09) & [Shivinder Gogna](https://github.com/shivngiggles)

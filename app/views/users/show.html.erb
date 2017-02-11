@@ -51,7 +51,10 @@
       </div>
       <div class="row">
         <h2>My Events</h2>
-
+          <% @user.events.each do |p| %>
+          <h4><%= link_to "#{p.event_name}", event_path(p)%></h4>
+          <!-- <p><%=p.created_at.strftime("%b %d, %Y")%></p> -->
+          <% end %>
       </div>
 
    </div>

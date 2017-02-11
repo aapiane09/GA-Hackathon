@@ -9,6 +9,8 @@ class IdeasController < ApplicationController
     @idea = Idea.find_by_id(params[:id])
   end
 
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+
   def new
     @idea = Idea.new
     @event = Event.find_by_id(params[:id])
@@ -57,6 +59,12 @@ class IdeasController < ApplicationController
     @event = Idea.find_by_id(params[:id]).event
     @idea.destroy
     redirect_to event_path(@event)
+  end
+
+  def upvote
+    @idea = Idea.find(params[:id])
+    @idea.upvote_by current_user
+    redirect_to :back
   end
 
   private
