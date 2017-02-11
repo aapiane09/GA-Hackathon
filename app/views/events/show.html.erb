@@ -6,12 +6,36 @@
 
   <%= button_to "Add Idea", new_idea_path(@event), method: "get" %>
 
+  <p>Come to the event!</p>
+  <% if !current_user %>
+  <%= form_for([@event, @event.users.build]) do |f| %>
+    <%= f.submit "RSVP", class: "btn btn-default" %>
+    <% end %>
+  <% else %>
+    <%= form_for([@event, @event.users.build]) do |f| %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit "RSVP", class: "btn btn-default" %>
+    <% end %>
+  <% end %>
+
+<p>Attendance</p>
+    <%= @event.users.count %>
+
+
+
+
   <h2>SUPER COOL IDEAS!</h2>
   <hr>
-  <% @event.ideas.each do |idea| %>
-    <h4><%= link_to "#{idea.title}", idea_path(idea)%></h4>
 
-    <h4><%= "#{idea.content}"%></h4>
-    <hr>
+  <% @event.ideas.order(:cached_weighted_average => :desc).reverse.each do |idea| %>
+      <h4><%= link_to idea.title, idea %><br>
+        Submitted <%= time_ago_in_words(idea.created_at) %> ago
+        by <%= idea.user.username  %>
+      </h4>
+      <%= link_to like_idea_path(idea), method: :put do %>
+        Upvote
+        <%= idea.get_upvotes.size %>
+      <% end %>
+      <hr>
   <% end %>
 </div>

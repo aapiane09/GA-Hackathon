@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'welcome#index'
+  get '/about' => 'about#index', as: 'about'
+
+
+
 
   # USER ROUTES
   get '/users/new' => 'users#new', as: 'new_user'
@@ -19,7 +23,7 @@ Rails.application.routes.draw do
   patch '/events/:id' => 'events#update'
   delete '/events/:id' => 'events#destroy'
   # get '/events/:id/ideas' => 'ideas#index', as: 'ideas'
-
+  post '/events/:event_id/users' =>  'events_users#build'
 
 
   # IDEAS ROUTES
@@ -36,5 +40,16 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
+
+  resources :ideas do
+    member do
+      put "like", to: "ideas#upvote"
+    end
+  end
+
+  resources :events, except: :create do
+    resources :users
+
+  end
 
 end

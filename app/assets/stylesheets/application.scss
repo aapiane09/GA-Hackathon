@@ -14,11 +14,12 @@
  *= require_self
  *= require toastr
  */
-@import "bootstrap";
 @import "bootstrap-sprockets";
-
-* {
-    margin: 0;
+@import "bootstrap";
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: asset-url('glyphicons-halflings-regular.eot');
+  src: asset-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), asset-url('glyphicons-halflings-regular.woff') format('woff'), asset-url('glyphicons-halflings-regular.ttf') format('truetype'), asset-url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 body,
@@ -32,13 +33,16 @@ input {
     margin: 10px;
 }
 
-footer {
-    height: 142px;
+.page-wrap {
+  height: 90vh;
 }
 
 footer {
     color: white;
     background-color: black;
+    bottom: 0;
+    height: 100px;
+    margin-top: 10%;
 }
 
 li {
@@ -57,29 +61,31 @@ img{
 .login_label {
     padding-left: 15px;
 }
-
-#logo {
-    color: white;
-    margin-right: 10px;
-    padding: 0;
-    height: 20px;
-}
+//
+// #logo {
+//     margin-right: 10px;
+//     padding: 0;
+//     margin-top: -5px;
+// }
 
 #hackathon {
     color: white;
     font-family: 'Oswald', sans-serif;
-    font-size: 25px;
-    padding-top: 4px;
+    font-size: 35px;
+    padding-bottom: 15px;
 }
+
+.logolink {
+  text-decoration: none;
+}
+
 #signupheader{
   font-family: 'Oswald', sans-serif;
   padding-left: 10px;
   padding-bottom: 20px;
 }
 
-#login-container{
-  padding-top: 80px;
-}
+
 .page-wrap {
     min-height: 100%;
     /* equal to footer height */
@@ -99,9 +105,7 @@ img{
     background-color: black;
 }
 
-// .nav-list {
-//     display: inline;
-// }
+
 .nav_links{
   text-align: left;
   padding-left: 50px;
@@ -110,21 +114,59 @@ img{
     background-color: white;
     color: red;
 }
-// .navbar-header{
-//
-//   position: relative;
-// }
+
+.navbar {
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+
+.navbar-default{
+  border-color: black;
+}
+
+
 .logo{
-  height: 35px;
+  height: 100%;
   width: 35px;
-  padding-top: 8px;
+  margin-top: -23px;
 }
 
-.form-group{
 
-}
 .subtitle {
   font-family: 'Oswald', sans-serif;
   padding-left: 10px;
   padding-bottom: 20px;
+}
+.pic-large{
+  margin: 10px auto;
+}
+
+.pic-small{
+
+}
+.card-title{
+  height: 100%;
+  width: 100%;
+}
+
+.cards{
+  margin-top: 10px;
+  background-color: #DADADA;
+  height: 200px;
+}
+.glyphicon-ring {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 3px solid white;
+  display: inline-table;
+  text-align: center;
+}
+.glyphicon{
+  margin: 8px;
+}
+.idea-pic{
+  height: 50px;
+  width: 50px;
+  float: left;
 }
