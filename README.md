@@ -32,10 +32,20 @@ Rails
 
 ## Code We're Proud Of
 <hr>
-Greice
+Greice: I chose this code given the challenge I had of making bootstrap examples work with rails form_for.
 <hr>
 ```ruby
-def update
+class User < ApplicationRecord
+  COURSES = ['WDI','UXDI','DSI','iOSDI','ADI']
+end
+
+<%= form_for @user do |f| %>
+ <div class="col-md-6">
+     <%= f.label :select_class, class:"input_field_label" %>
+     <%= f.collection_select :course, User::COURSES, :to_s, :to_s,:include_blank => true %>
+   </div>
+ <%= f.submit "Save", class:"btn btn-danger" %>
+<% end %>
 ```
 <hr>
 Zach
@@ -50,10 +60,15 @@ Shiv
 def activity_count
 ```
 <hr>
-Alex
+Alex: This code sorts and limits the amount of ideas that display on the front page.
 <hr>
 ```ruby
-def activity_count
+//welcomecontroller.rb
+sorted_ideas = Event.first.ideas.sort_by &:created_at
+@ideas = sorted_ideas.reverse
+
+//welcome#index
+<% @ideas.take(3).each do |p| % >
 ```
 
 ## Screen Shots
