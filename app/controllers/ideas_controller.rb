@@ -21,6 +21,7 @@ class IdeasController < ApplicationController
       @event = Event.find_by_id(params[:id])
       new_idea.user = current_user
       new_idea.event = @event
+      new_idea.images = idea_params[:images]
       @idea = new_idea.save
       if @idea
         redirect_to @event
@@ -69,7 +70,7 @@ class IdeasController < ApplicationController
 
   private
   def idea_params
-    params.require(:idea).permit(:title, :content, :photo)
+    params.require(:idea).permit(:title, :content, {images:[]})
   end
 
 end
