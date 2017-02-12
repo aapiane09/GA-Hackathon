@@ -6,10 +6,14 @@
     <div class="col-md-9">
       <h2 id="eventshowheader"><%= @event.event_name %></h2>
 
-      <h3>Join us as we build apps, hardware, and community in the California sun. Yeah, we’ll be hacking for 36 hours straight, but we’ll take a yoga break or two. And whether you’re a seasoned veteran or just getting started, we’ve got your back every step of the way. Don’t forget your sunscreen!</h3>
-
+      <h4>General Assembly students and alumni come together for a weekend full of hacking!</h4>
       <br>
-      <h2>Choose What We Build!</h2>
+      <h4>What is a hackathon?</h4>
+      <p>A hackathon is where you turn your crazy ideas into real stuff. Students and alumni will come together and build something they’re passionate about; come, dive in, and make the most incredible things you can imagine alongside fellow creators.</p>
+      <h4>Who can come?</h4>
+      <p>GA-Hackathon is open to any General Assembly student or alumni.</p>
+      <br>
+      <h2>You Choose What We Build!</h2>
       <hr>
       <% @event.ideas.order(:cached_weighted_average => :desc).reverse.each do |idea| %>
           <h4><%= link_to idea.title, idea %><br>
