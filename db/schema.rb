@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170210202312) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,7 +45,6 @@ ActiveRecord::Schema.define(version: 20170210202312) do
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
     t.string   "photo"
-
     t.index ["cached_votes_down"], name: "index_ideas_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_ideas_on_cached_votes_score", using: :btree
     t.index ["cached_votes_total"], name: "index_ideas_on_cached_votes_total", using: :btree
@@ -68,9 +66,9 @@ ActiveRecord::Schema.define(version: 20170210202312) do
     t.datetime "updated_at",            null: false
     t.string   "course"
     t.string   "password_digest"
+    t.string   "slug"
     t.string   "photo"
     t.string   "password_confirmation"
-
   end
 
   create_table "votes", force: :cascade do |t|
