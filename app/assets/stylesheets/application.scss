@@ -22,10 +22,6 @@
   src: asset-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), asset-url('glyphicons-halflings-regular.woff') format('woff'), asset-url('glyphicons-halflings-regular.ttf') format('truetype'), asset-url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
-body,
-html {
-    height: 100%;
-}
 
 input {
     height: 40px;
@@ -33,17 +29,6 @@ input {
     margin: 10px;
 }
 
-.page-wrap {
-  height: 90vh;
-}
-
-footer {
-    color: white;
-    background-color: black;
-    bottom: 0;
-    height: 100px;
-    margin-top: 10%;
-}
 
 li {
     color: white;
@@ -61,23 +46,7 @@ img{
 .login_label {
     padding-left: 15px;
 }
-//
-// #logo {
-//     margin-right: 10px;
-//     padding: 0;
-//     margin-top: -5px;
-// }
 
-#hackathon {
-    color: white;
-    font-family: 'Oswald', sans-serif;
-    font-size: 35px;
-    padding-bottom: 15px;
-}
-
-.logolink {
-  text-decoration: none;
-}
 
 #signupheader{
   font-family: 'Oswald', sans-serif;
@@ -85,24 +54,8 @@ img{
   padding-bottom: 20px;
 }
 
-
-.page-wrap {
-    min-height: 100%;
-    /* equal to footer height */
-    margin-bottom: -142px;
-}
-
-.page-wrap:after {
-    content: "";
-    display: block;
-}
-
 .col {
     background-color: green;
-}
-
-.navbar-default {
-    background-color: black;
 }
 
 
@@ -113,22 +66,6 @@ img{
 .nav_links:hover {
     background-color: white;
     color: red;
-}
-
-.navbar {
-  border-radius: 0px;
-  margin-bottom: 0px;
-}
-
-.navbar-default{
-  border-color: black;
-}
-
-
-.logo{
-  height: 100%;
-  width: 35px;
-  margin-top: -23px;
 }
 
 
@@ -169,4 +106,53 @@ img{
   height: 50px;
   width: 50px;
   float: left;
+}
+
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+#logo {
+  height: 100%;
+}
+
+#hackathon {
+  font-family: 'Oswald', sans-serif;
+  line-height: 50px;
+  font-size: 3em;
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.contain {
+   min-height:100%;
+   position:relative;
+}
+.header {
+   background: black;
+   padding:10px;
+}
+.body {
+   padding:10px;
+   padding-bottom: 60px, auto;   /* Height of the footer */
+}
+.footer {
+  color: #A2A2A2;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:60px, auto;   /* Height of the footer */
+  background: #222222;
 }
