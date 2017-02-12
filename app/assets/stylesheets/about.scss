@@ -1,6 +1,11 @@
 // Place all the styles related to the about controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.about-main-image {
+  max-width: 100%;
+height: auto;
+}
+
 .about-user-image {
   height: 150px;
   width: 150px;
