@@ -13,6 +13,8 @@
       <h4>Who can come?</h4>
       <p>GA-Hackathon is open to any General Assembly student or alumni.</p>
       <br>
+
+
       <h2>You Choose What We Build!</h2>
       <hr>
       <% @event.ideas.order(:cached_weighted_average => :desc).reverse.each do |idea| %>
@@ -29,9 +31,10 @@
       <% end %>
    </div>
 
+
    <!-- SIDE DISPLAY BAR -->
     <div class="col-md-3" id="eventshowsidebar">
-      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" id="eventshowimage" height="200" width="300">
+      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" id="eventshowimage" height="150" width="300">
       <h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span><%= @event.date %></h4>
       <h5> &nbsp;&nbsp;10 am – 5 pm PST </h5>
       <hr id="sidebreak">
