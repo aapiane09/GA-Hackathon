@@ -199,24 +199,25 @@ img{
   text-align: left;
   font-family: 'Oswald', sans-serif;
   font-size: 65px;
-  // width: 100%;
-  // background-color: #ECECEC;
-  // margin-top: 0px;
-  // padding-top: 30px;
-  // height: 150px;
+  margin-top:50px
 }
 
 #eventshowsidebar {
   background-color: #ECECEC;
   padding: 50px;
   border: black 2px solid;
-  height:auto;
   overflow:auto;
+  margin-top:100px
 }
 
 #eventshowimage {
-  float: left;
   border: black solid 2px;
+  display:block;
+  margin:auto;
+}
+
+#sidebreak {
+  border: solid black 1px;
 }
 
 // * {

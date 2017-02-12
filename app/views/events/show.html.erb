@@ -22,8 +22,16 @@
       <% end %>
    </div>
 
+   <!-- SIDE DISPLAY BAR -->
     <div class="col-md-3" id="eventshowsidebar">
-      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" id="eventshowimage" height="250" width="310">
+      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" id="eventshowimage" height="250" width="350">
+      <h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span><%= @event.date %></h4>
+      <h5> &nbsp;&nbsp;10 am – 5 pm PST </h5>
+      <hr id="sidebreak">
+      <h4><span class="glyphicon glyphicon-filter" aria-hidden="true"> </span> GA SF </h4>
+      <h5>225 Bush Street, 5th Floor (East Entrance)</h5>
+      <h5>  San Francisco, CA 94104</h5>
+
       <%= button_to "Add Idea", new_idea_path(@event), class: "btn btn-primary pic-large", method: "get" %>
 
       <% if !current_user %>
