@@ -6,7 +6,10 @@
     <div class="col-md-9">
       <h2 id="eventshowheader"><%= @event.event_name %></h2>
 
-      <h2>SUPER COOL IDEAS!</h2>
+      <h3>Join us as we build apps, hardware, and community in the California sun. Yeah, we’ll be hacking for 36 hours straight, but we’ll take a yoga break or two. And whether you’re a seasoned veteran or just getting started, we’ve got your back every step of the way. Don’t forget your sunscreen!</h3>
+
+      <br>
+      <h2>Choose What We Build!</h2>
       <hr>
       <% @event.ideas.order(:cached_weighted_average => :desc).reverse.each do |idea| %>
           <h4><%= link_to idea.title, idea %><br>
@@ -24,14 +27,14 @@
 
    <!-- SIDE DISPLAY BAR -->
     <div class="col-md-3" id="eventshowsidebar">
-      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" id="eventshowimage" height="250" width="350">
+      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" id="eventshowimage" height="200" width="300">
       <h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span><%= @event.date %></h4>
       <h5> &nbsp;&nbsp;10 am – 5 pm PST </h5>
       <hr id="sidebreak">
       <h4><span class="glyphicon glyphicon-filter" aria-hidden="true"> </span> GA SF </h4>
-      <h5>225 Bush Street, 5th Floor (East Entrance)</h5>
-      <h5>  San Francisco, CA 94104</h5>
-
+      <h5>&nbsp;&nbsp;225 Bush Street, 5th Floor &nbsp;&nbsp;(East Entrance)</h5>
+      <h5> &nbsp;&nbsp; San Francisco, CA 94104</h5>
+      <hr id="sidebreak">
       <%= button_to "Add Idea", new_idea_path(@event), class: "btn btn-primary pic-large", method: "get" %>
 
       <% if !current_user %>
@@ -48,7 +51,7 @@
           <% end %>
         <% end %>
       <% end %>
-      <h3>Hacker Count: <%= @event.users.count %> </h3>
+      <h4><span class="glyphicon glyphicon-user" aria-hidden="true"> </span>Hacker Count: <%= @event.users.count %> </h4>
   </div>
  </div>
 </div>
