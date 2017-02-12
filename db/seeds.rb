@@ -7,7 +7,7 @@ Idea.destroy_all
 event_data = [{
   event_name: "GA-Hackthon - Winter 17'",
   date: "2/25/17",
-  content: "Here's some great details about the event. So excited!",
+  content: "Join us for our first annual GA-Hackthon. Come together with a group of your peers for a weekend full of coding, designing, hacking and sun chips! You choose what we buid by contributing your own ideas or upvoting your favorite.",
   event_photo: File.open(File.join(Rails.root, "/app/assets/images/event3.jpg")),
   }, {
   event_name: "GA-Hackthon - Spring 17'",

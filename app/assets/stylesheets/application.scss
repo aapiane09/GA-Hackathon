@@ -193,6 +193,10 @@ img{
   height: 150px;
 }
 
+#eventrows:hover {
+  // background-color: #ECECEC;
+}
+
 // Event show page
 
 #eventshowheader {
@@ -219,6 +223,10 @@ img{
 
 #sidebreak {
   border: solid black 1px;
+}
+
+span.glyphicon-menu-up {
+    font-size: 2em;
 }
 
 // * {

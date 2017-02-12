@@ -15,7 +15,7 @@
       <br>
 
 
-      <h2>You Choose What We Build!</h2>
+      <h2>You Pick, We Build!</h2>
       <hr>
       <% @event.ideas.order(:cached_weighted_average => :desc).reverse.each do |idea| %>
           <h4><%= link_to idea.title, idea %><br>
@@ -24,7 +24,7 @@
           </h4>
           <h5> <%= idea.content  %> </h5>
           <%= link_to like_idea_path(idea), method: :put do %>
-            Upvote
+          <span class="glyphicon glyphicon-menu-up" aria-hidden="true"> </span>
             <%= idea.get_upvotes.size %>
           <% end %>
           <hr>
