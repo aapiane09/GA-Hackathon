@@ -22,6 +22,8 @@
   src: asset-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), asset-url('glyphicons-halflings-regular.woff') format('woff'), asset-url('glyphicons-halflings-regular.ttf') format('truetype'), asset-url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+
+
 body,
 html {
     height: 100%;
@@ -170,3 +172,83 @@ img{
   width: 50px;
   float: left;
 }
+
+// Event index page
+
+.event_title a {
+  text-decoration: none !important;
+  font-family: 'Oswald', sans-serif;
+  font-size: 45px;
+  color: black;
+}
+
+.eventindexheader {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  width: 100%;
+  background-color: #ECECEC;
+  margin-top: 0px;
+  padding-top: 80px;
+  height: 250px;
+}
+
+#eventindexheader1 {
+  font-size: 65px;
+}
+
+#eventindexheader2 {
+  font-size: 25px;
+  padding-right: 33%;
+}
+
+#eventrows:hover {
+  background-color: #ECECEC;
+}
+
+// Event show page
+
+#eventshowheader {
+  text-align: left;
+  font-family: 'Oswald', sans-serif;
+  font-size: 65px;
+  margin-top:50px;
+}
+
+#eventshowheader2 {
+  text-align: left;
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
+  margin-top:25px;
+  text-decoration: underline;
+}
+
+#eventshowsidebar {
+  background-color: #ECECEC;
+  padding: 50px;
+  border: black 2px solid;
+  overflow: auto;
+  margin-top: 70px;
+}
+
+#eventshowimage {
+  // border: black solid 2px;
+  display:block;
+  margin:auto;
+  padding-right: 100px;
+}
+
+#sidebreak {
+  border: solid black 1px;
+}
+
+#eventshowideas:hover {
+  background-color: #ECECEC;
+}
+
+span.glyphicon-menu-up {
+    font-size: 2em;
+}
+
+// * {
+//   border: black solid 2px;
+// }
