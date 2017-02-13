@@ -56,19 +56,13 @@
                    <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
                     toastr['<%= type %>']('<%= f[1] %>');
                     // toastr.options.progressBar = true;
-
                 </script>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
+              <% end %> <!-- %flash% -->
+            <% end %> <!-- %unless% -->
+          </div> <!-- container -->
+        </div> <!-- .body -->
         <footer class="footer">
-          <div class="row">
-            <div class="col-xs-10 col-xs-offset-1">
-              General Assembly is a pioneer in education and career transformation, specializing in today’s most in-demand skills. The leading source for training, staffing, and career transitions, we foster a flourishing community of professionals pursuing careers they love.
-            </div>
-          </div>
-        </footer>
-      </div>
+        </footer> <!-- .footer -->
+      </div> <!-- .contain -->
     </body>
 </html>
