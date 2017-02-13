@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170211214526) do
 
   # These are extensions that must be enabled in order to support this database
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 20170211214526) do
     t.datetime "updated_at",            null: false
     t.string   "course"
     t.string   "password_digest"
+    t.string   "slug"
     t.string   "photo"
     t.string   "password_confirmation"
   end
