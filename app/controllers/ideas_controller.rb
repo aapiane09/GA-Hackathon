@@ -1,7 +1,7 @@
 class IdeasController < ApplicationController
-  after_action :save_my_previous_url, only:[:new]
+  # after_action :save_my_previous_url, only:[:new]
   before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
-  
+
   def index
     @user = User.find(params[:user_id])
     @events = @user.events
@@ -73,7 +73,7 @@ class IdeasController < ApplicationController
 
   private
   def idea_params
-    params.require(:idea).permit(:title, :content, {images:[]})
+    params.require(:idea).permit(:title, :content,:photo, {images:[]})
   end
 
 end
