@@ -175,11 +175,11 @@ img{
 
 // Event index page
 
-.event_title {
+.event_title a {
+  text-decoration: none !important;
   font-family: 'Oswald', sans-serif;
   font-size: 45px;
-  text-decoration: none;
-  color: black!important;
+  color: black;
 }
 
 .eventindexheader {
