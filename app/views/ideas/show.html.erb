@@ -37,15 +37,9 @@
   </div>
   <div class="row">
     <h2 class="text-center">Attachments</h2>
-    <div class="row">
-      <%= @idea.images.each_with_index do |image, index| %>
-        <div class="row">
-          <%= image_tag image, class:"idea_attachments center-block" %>
-            <%= button_to  idea_image_path(@idea, index), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger btn-block" do %>
-              Delete attachment<span class="glyphicon glyphicon-trash"></span>
-            <% end %>
-        </div>
-      <% end %>
+    <div class="col-md-12 col-md-push-2">
+
+      <%= image_tag @idea.photo %>
     </div>
  </div>
-
+<% console %>

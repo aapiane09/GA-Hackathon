@@ -9,6 +9,9 @@ class ApplicationController < ActionController::Base
   end
 
   def save_my_previous_url
-    session[:my_previous_url] = URI(request.referer || '').path
+    if URI(request.referer || '').path != URI(request.original_url).path
+      session[:my_previous_url] = URI(request.referer || '').path
+    end
   end
+  
 end
