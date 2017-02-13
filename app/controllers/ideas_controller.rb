@@ -9,7 +9,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find_by_id(params[:id])
   end
 
-  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy, :upvote]
 
   def new
     @idea = Idea.new
