@@ -39,13 +39,13 @@ input {
   height: 90vh;
 }
 
-footer {
-    color: white;
-    background-color: black;
-    bottom: 0;
-    height: 100px;
-    margin-top: 10%;
-}
+// footer {
+//     color: white;
+//     background-color: black;
+//     bottom: 0;
+//     height: 100px;
+//     margin-top: 10%;
+// }
 
 li {
     color: white;
@@ -194,7 +194,7 @@ img{
 }
 
 #eventrows:hover {
-  // background-color: #ECECEC;
+  background-color: #ECECEC;
 }
 
 // Event show page
@@ -203,7 +203,15 @@ img{
   text-align: left;
   font-family: 'Oswald', sans-serif;
   font-size: 65px;
-  margin-top:50px
+  margin-top:50px;
+}
+
+#eventshowheader2 {
+  text-align: left;
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
+  margin-top:25px;
+  text-decoration: underline;
 }
 
 #eventshowsidebar {
