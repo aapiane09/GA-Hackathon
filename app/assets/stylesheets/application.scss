@@ -177,20 +177,28 @@ img{
 
 .event_title {
   font-family: 'Oswald', sans-serif;
-  font-size: 35px;
+  font-size: 45px;
   text-decoration: none;
   color: black!important;
 }
 
-#eventindexheader {
+.eventindexheader {
   text-align: center;
   font-family: 'Oswald', sans-serif;
-  font-size: 65px;
   width: 100%;
   background-color: #ECECEC;
   margin-top: 0px;
-  padding-top: 30px;
-  height: 150px;
+  padding-top: 80px;
+  height: 250px;
+}
+
+#eventindexheader1 {
+  font-size: 65px;
+}
+
+#eventindexheader2 {
+  font-size: 25px;
+  padding-right: 33%;
 }
 
 #eventrows:hover {

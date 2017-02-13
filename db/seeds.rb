@@ -12,12 +12,12 @@ event_data = [{
   }, {
   event_name: "GA-Hackthon - Spring 17'",
   date: "5/20/17",
-  content: "Here's some great details about the event. So excited!",
+  content: "Stay tuned for more information on our upcoming Hackathons",
   event_photo: File.open(File.join(Rails.root, "/app/assets/images/event3.jpg")),
   }, {
   event_name: "GA-Hackthon - Summer 17'",
   date: "9/23/17",
-  content: "Here's some great details about the event. So excited!",
+  content: "Stay tuned for more information on our upcoming Hackathons",
   event_photo: File.open(File.join(Rails.root, "/app/assets/images/event3.jpg")),
   }]
 
