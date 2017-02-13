@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+
+  extend FriendlyId
+    friendly_id :username, use: :slugged
+  
+
   has_secure_password
   mount_uploader :photo, PhotoUploader
 
@@ -8,7 +13,7 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates :username, uniqueness: true
-  
+
   COURSES = ['WDI','UXDI','DSI','iOSDI','ADI']
 
   def self.confirm(params)
