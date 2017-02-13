@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   def new
@@ -27,13 +27,13 @@ class UsersController < ApplicationController
 
   def edit
     user_id = params[:id]
-    @user = User.find_by_id(user_id)
+    @user = User.friendly.find(user_id)
     render :edit
   end
 
   def update
     user_id = params[:id]
-    @user = User.find_by_id(user_id)
+    @user = User.friendly.find(user_id)
     if @user.update_attributes(user_params)
       # Insert flash message errors
       redirect_to user_path(@user)

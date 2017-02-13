@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find_by_id(params[:id])
+    @event = Event.friendly.find(params[:id])
     store_location
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213200107) do
+ActiveRecord::Schema.define(version: 20170213212037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20170213200107) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "content"
+    t.string   "slug"
   end
 
   create_table "events_users", id: false, force: :cascade do |t|
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20170213200107) do
     t.float    "cached_weighted_average", default: 0.0
     t.string   "photo"
     t.json     "images"
+    t.string   "slug"
     t.index ["cached_votes_down"], name: "index_ideas_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_ideas_on_cached_votes_score", using: :btree
     t.index ["cached_votes_total"], name: "index_ideas_on_cached_votes_total", using: :btree
