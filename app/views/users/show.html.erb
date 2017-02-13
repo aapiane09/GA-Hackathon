@@ -1,5 +1,4 @@
 <!-- USER PROFILE PAGE -->
-<div class="container">
   <div class="row subtitle text-center">
     <h1>Welcome, <%= @user.first_name %> <%= @user.last_name %>!</h1>
   </div>
@@ -25,13 +24,8 @@
         <%= button_to "Edit Profile", edit_user_path(@user), :method => :get, class:"btn btn-danger center-block" %>
         <% end %>
       </div>
-
     </div>
-  </div>
-  <div class="col-md-1">
-
-  </div>
-  <div class="col-md-7">
+  <div class="col-md-7 col-md-offset-1">
     <div class="row">
       <h2>My Ideas</h2>
       <br>
@@ -52,5 +46,4 @@
         <% end %>
     </div>
   </div>
-
 </div>

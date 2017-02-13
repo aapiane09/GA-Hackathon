@@ -1,22 +1,15 @@
-<!-- LOGIN FORM -->
-  <div class="row" id="login-container">
-    <div class="col-md-2 col-xs-2">
-
-    </div>
-    <div class="form-group col-md-8 col-xs-8">
-        <h2 class="subtitle">LOGIN</h2>
+<div class="row" id="login-container">
+  <div class="form-group col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+      <h2 class="subtitle">LOGIN</h2>
         <%= form_for @user, :url => sessions_path(@user) do |f| %>
 
-            <%= f.label :email, class:"input_field_label" %>:
-            <%= f.email_field :email, placeholder: " Email", id:"form", :required => true %>
+          <%= f.label :email, class:"login_label" %>:
+          <%= f.email_field :email, placeholder: " Email", id:"form" %>
 
-            <%= f.label :password, class:"input_field_label" %>:
-            <%= f.password_field :password, placeholder: " Password", id:"form", :required => true %>
+          <%= f.label :password, class:"login_label" %>:
+          <%= f.password_field :password, placeholder: " Password", id:"form" %>
 
-            <%= f.submit "Log In", class:'btn btn-danger btn-block' %>
-      <% end %>
-    </div>
-    <div class="col-md-2 col-xs-2">
-
-    </div>
+          <%= f.submit "Log In", class:'btn btn-danger btn-block' %>
+        <% end %>
+      </div>
   </div>

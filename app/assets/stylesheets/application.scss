@@ -23,11 +23,8 @@
 }
 
 
-
-body,
-
-html {
-    height: 100%;
+a {
+  text-decoration: none !important;
 }
 
 input {
@@ -36,12 +33,9 @@ input {
     margin: 10px;
 }
 
-footer {
-    color: white;
-    background-color: black;
-    bottom: 0;
-    height: 100px;
-    margin-top: 10%;
+#toast-container{
+  top: 80px;
+
 }
 
 li {
@@ -66,13 +60,15 @@ img{
   font-family: 'Oswald', sans-serif;
 }
 
-.card-title{
+.row {
+  margin-left: 0;
+  margin-right: 0;
+
+  .card-title{
   height: 100%;
   width: 100%;
 }
 
-.col {
-    background-color: green;
 }
 
 .glyphicon{
@@ -132,6 +128,7 @@ img{
     background-color: white;
     color: red;
 }
+
 
 .page-wrap {
     min-height: 100%;
@@ -238,6 +235,62 @@ img{
   padding-right: 100px;
 }
 
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  border-color: black;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+#logo {
+  height: 100%;
+}
+
+#hackathon {
+  font-family: 'Oswald', sans-serif;
+  line-height: 50px;
+  font-size: 3em;
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.contain {
+   min-height:100%;
+   position:relative;
+}
+.header {
+   background: black;
+   padding:10px;
+}
+.body {
+   padding:10px;
+   padding-bottom: 250px;   /* Height of the footer */
+}
+.footer {
+  color: #A2A2A2;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height: 125px;   /* Height of the footer */
+  background: #222222;
+  padding-top: 10px;
+}
+
+.editlabel {
+  font-family: Oswald;
+}
+
 #sidebreak {
   border: solid black 1px;
 }
@@ -250,6 +303,3 @@ span.glyphicon-menu-up {
     font-size: 2em;
 }
 
-// * {
-//   border: black solid 2px;
-// }

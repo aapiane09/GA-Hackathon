@@ -1,14 +1,11 @@
 <!-- HOME PAGE -->
+<h1>GA HACKATHON</h1>
+ <a href="/events"<h2>ALL EVENTS</h2></a>
 
-<div class="container">
-  <h1>GA HACKATHON</h1>
-   <a href="/events"<h2>ALL EVENTS</h2></a>
-
-  <h2>SUPER COOL IDEAS!</h2>
+<h2>SUPER COOL IDEAS!</h2>
+<hr>
+<% @ideas.take(3).each do |p| %>
+  <h4><%= link_to "#{p.title}", idea_path(p)%></h4>
+  <h4><%= "#{p.content}"%></h4>
   <hr>
-  <% @ideas.each do |p| %>
-    <h4><%= link_to "#{p.title}", idea_path(p)%></h4>
-    <h4><%= "#{p.content}"%></h4>
-    <hr>
-  <% end %>
-</div>
+<% end %>
