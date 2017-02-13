@@ -41,6 +41,10 @@ Rails.application.routes.draw do
   post '/sessions' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
 
+  # IMAGES ROUTES FOR IDEAS
+   post  '/ideas/:idea_id/images(.:format)' => 'images#create', as: 'idea_images'
+   delete '/ideas/:idea_id/images/:id(.:format)' => 'images#destroy', as: 'idea_image'
+
   resources :ideas do
     member do
       put "like", to: "ideas#upvote"
@@ -51,5 +55,4 @@ Rails.application.routes.draw do
     resources :users
 
   end
-
 end

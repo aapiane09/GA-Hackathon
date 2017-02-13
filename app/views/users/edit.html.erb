@@ -1,35 +1,8 @@
-<!-- Edit User Profile -->
- <div class="row">
-       <br>
-       <br>
-     <div>
-      <h2 id="signupheader">Edit Profile</h2>
-      <%= form_for @user do |f| %>
-        <div>
-          <h5 class="editlabel"> First Name </h5>
-          <%= f.text_field :first_name, placeholder: "First Name", id:"form" %>
-        </div>
-        <div>
-          <h5 class="editlabel"> Last Name </h5>
-          <%= f.text_field :last_name, placeholder: "Last Name", id:"form" %>
-        </div>
-        <div>
-          <h5 class="editlabel"> Email Address </h5>
-          <%= f.email_field :email, placeholder: "Email" %>
-        </div>
-        <div>
-          <h5 class="editlabel"> Social Media URL </h5>
-          <%= f.text_field :social_url, placeholder: "Social" %>
-        </div>
-        <div>
-          <h5 class="editlabel"> GA Course </h5>
-          <%= f.text_field :course, placeholder: "Course" %>
-        </div>
-        <div class="">
-          <h5 class="editlabel"> Profile Photo </h5>
-          <%= f.file_field :photo %>
-        </div>
-        <%= f.submit "Save" %>
-      <% end %>
+
+<!-- EDIT USER PROFILE -->
+<div class="row">
+  <div class="col-md-8 col-xs-8 col-md-offset-2 col-xs-offset-2">
+      <h2 class="subtitle">Edit Profile</h2>
+    <%= render "form_for_user" %>
   </div>
 </div>

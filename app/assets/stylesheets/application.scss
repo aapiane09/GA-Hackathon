@@ -22,6 +22,7 @@
   src: asset-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), asset-url('glyphicons-halflings-regular.woff') format('woff'), asset-url('glyphicons-halflings-regular.ttf') format('truetype'), asset-url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+
 a {
   text-decoration: none !important;
 }
@@ -34,6 +35,7 @@ input {
 
 #toast-container{
   top: 80px;
+
 }
 
 li {
@@ -45,77 +47,192 @@ img{
 
 }
 
-.input_field {
-    width: auto;
+.cards{
+  margin: 10px, auto;
+  background-color: #DADADA;
+  // height: 200px;
+  max-width: 350px;
+  min-width: 250px;
+  height: auto;
 }
 
-.login_label {
-    padding-left: 15px;
+.card-content{
+  font-family: 'Oswald', sans-serif;
 }
 
 .row {
   margin-left: 0;
   margin-right: 0;
+
+  .card-title{
+  height: 100%;
+  width: 100%;
 }
 
-#signupheader{
-  font-family: 'Oswald', sans-serif;
-  padding-left: 10px;
-  padding-bottom: 20px;
 }
 
-.col {
-    background-color: green;
+.glyphicon{
+  margin: 8px;
 }
 
+.idea_attachments{
+  height: 250px;
+  width: 250px;
+}
+
+.idea-card{
+  border: solid 1px #DADADA;
+  padding: 10px;
+}
+
+.idea-pic{
+  height: 50px;
+  width: 50px;
+  float: left;
+}
+
+.input_field {
+    width: auto;
+}
+
+.input_field_label {
+    padding-left: 15px;
+}
+
+.logo{
+  height: 100%;
+  width: 35px;
+  margin-top: -23px;
+}
+
+.logolink {
+  text-decoration: none;
+}
+
+.navbar {
+  border-radius: 0px;
+  margin-bottom: 0px;
+}
+
+.navbar-default {
+    background-color: black;
+    border-color: black;
+}
 
 .nav_links{
   text-align: left;
   padding-left: 50px;
 }
+
 .nav_links:hover {
     background-color: white;
     color: red;
 }
 
 
+.page-wrap {
+    min-height: 100%;
+    /* equal to footer height */
+    margin-bottom: -142px;
+}
+
+.page-wrap {
+  height: 90vh;
+}
+
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+.pic-large{
+  margin: 10px auto;
+  max-width: 250px;
+  max-height: 250px;
+  border: solid 1px #DADADA;
+  border-radius: 50%;
+}
+
+.pic-small{
+  margin-top: 15px;
+  max-width: 80px;
+  max-height: 80px;
+}
+
 .subtitle {
   font-family: 'Oswald', sans-serif;
   padding-left: 10px;
   padding-bottom: 20px;
 }
-.pic-large{
-  margin: 10px auto;
+
+#hackathon {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    padding-bottom: 15px;
 }
 
-.pic-small{
+// Event index page
 
-}
-.card-title{
-  height: 100%;
-  width: 100%;
+.event_title a {
+  text-decoration: none !important;
+  font-family: 'Oswald', sans-serif;
+  font-size: 45px;
+  color: black;
 }
 
-.cards{
-  margin-top: 10px;
-  background-color: #DADADA;
-  height: 200px;
-}
-.glyphicon-ring {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 3px solid white;
-  display: inline-table;
+.eventindexheader {
   text-align: center;
+  font-family: 'Oswald', sans-serif;
+  width: 100%;
+  background-color: #ECECEC;
+  margin-top: 0px;
+  padding-top: 80px;
+  height: 250px;
 }
-.glyphicon{
-  margin: 8px;
+
+#eventindexheader1 {
+  font-size: 65px;
 }
-.idea-pic{
-  height: 50px;
-  width: 50px;
-  float: left;
+
+#eventindexheader2 {
+  font-size: 25px;
+  padding-right: 33%;
+}
+
+#eventrows:hover {
+  background-color: #ECECEC;
+}
+
+// Event show page
+
+#eventshowheader {
+  text-align: left;
+  font-family: 'Oswald', sans-serif;
+  font-size: 65px;
+  margin-top:50px;
+}
+
+#eventshowheader2 {
+  text-align: left;
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
+  margin-top:25px;
+  text-decoration: underline;
+}
+
+#eventshowsidebar {
+  background-color: #ECECEC;
+  padding: 50px;
+  border: black 2px solid;
+  overflow: auto;
+  margin-top: 70px;
+}
+
+#eventshowimage {
+  // border: black solid 2px;
+  display:block;
+  margin:auto;
+  padding-right: 100px;
 }
 
 html,
@@ -173,3 +290,16 @@ body {
 .editlabel {
   font-family: Oswald;
 }
+
+#sidebreak {
+  border: solid black 1px;
+}
+
+#eventshowideas:hover {
+  background-color: #ECECEC;
+}
+
+span.glyphicon-menu-up {
+    font-size: 2em;
+}
+

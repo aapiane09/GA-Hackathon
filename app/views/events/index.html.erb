@@ -1,8 +1,29 @@
 <!-- SHOW ALL EVENTS -->
-<h1>Upcoming Hackathons</h1>
+
+<div class="eventindexheader">
+    <h1 id="eventindexheader1">UPCOMING HACKATHONS</h1>
+    <h3 id="eventindexheader2">SAN FRANCISCO,CA</h1>
+</div>
   <br>
+
   <% @events.each do |p| %>
-    <h4><%= link_to "#{p.event_name}", event_path(p) %></h4>
-    <hr>
-    <br>
-  <% end %>
+  <div class="row" id="eventrows">
+
+    <div class="col-md-3 col-md-push-8">
+      <br>
+      <h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span><%= "#{p.date}" %></h4>
+    </div>
+
+    <div class="col-md-6">
+        <h3 class="event_title"><%= link_to "#{p.event_name}", event_path(p) %></h3>
+        <br>
+        <h4><%= "#{p.content}" %></h4>
+        <br>
+    </div>
+
+    <div class="col-md-3 col-md-pull-10">
+      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" class="">
+    </div>
+  </div>
+  <hr>
+    <% end %>

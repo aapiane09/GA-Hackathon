@@ -1,5 +1,7 @@
 class IdeasController < ApplicationController
-
+  after_action :save_my_previous_url, only:[:new]
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+  
   def index
     @user = User.find(params[:user_id])
     @events = @user.events
@@ -11,6 +13,7 @@ class IdeasController < ApplicationController
 
   before_action :require_login, only: [:new, :create, :edit, :update, :destroy, :upvote]
 
+
   def new
     @idea = Idea.new
     @event = Event.find_by_id(params[:id])
@@ -21,6 +24,7 @@ class IdeasController < ApplicationController
       @event = Event.find_by_id(params[:id])
       new_idea.user = current_user
       new_idea.event = @event
+      new_idea.images = idea_params[:images]
       @idea = new_idea.save
       if @idea
         redirect_to @event
@@ -69,7 +73,7 @@ class IdeasController < ApplicationController
 
   private
   def idea_params
-    params.require(:idea).permit(:title, :content, :photo)
+    params.require(:idea).permit(:title, :content, {images:[]})
   end
 
 end
