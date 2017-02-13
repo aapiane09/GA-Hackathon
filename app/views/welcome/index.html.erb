@@ -4,7 +4,7 @@
 
 <h2>SUPER COOL IDEAS!</h2>
 <hr>
-<% @ideas.each do |p| %>
+<% @ideas.take(3).each do |p| %>
   <h4><%= link_to "#{p.title}", idea_path(p)%></h4>
   <h4><%= "#{p.content}"%></h4>
   <hr>

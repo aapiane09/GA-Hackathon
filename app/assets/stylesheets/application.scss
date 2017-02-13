@@ -29,6 +29,9 @@ input {
     margin: 10px;
 }
 
+#toast-container{
+  top: 80px;
+}
 
 li {
     color: white;
@@ -47,6 +50,10 @@ img{
     padding-left: 15px;
 }
 
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
 
 #signupheader{
   font-family: 'Oswald', sans-serif;
@@ -117,6 +124,8 @@ body {
 
 .navbar {
   margin-bottom: 0;
+  border-radius: 0;
+  border-color: black;
 }
 
 .navbar-brand {
@@ -146,13 +155,18 @@ body {
 }
 .body {
    padding:10px;
-   padding-bottom: 60px, auto;   /* Height of the footer */
+   padding-bottom: 250px;   /* Height of the footer */
 }
 .footer {
   color: #A2A2A2;
   position:absolute;
   bottom:0;
   width:100%;
-  height:60px, auto;   /* Height of the footer */
+  height: 125px;   /* Height of the footer */
   background: #222222;
+  padding-top: 10px;
+}
+
+.editlabel {
+  font-family: Oswald;
 }

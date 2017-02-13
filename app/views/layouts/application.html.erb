@@ -33,18 +33,15 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
               <ul class="nav navbar-nav navbar-right">
-                  <li>
-                      <a href="/about">About
-                          <span class="sr-only">(current)</span>
-                      </a>
-                  </li>
-                  <% if current_user %>
+                <li><%= link_to "Events", events_path, class: 'nav_links' %></li>
+                <li><%= link_to "About", about_path, class: 'nav_links' %></li>
+                <% if current_user %>
                   <li><%= link_to "Profile", user_path(current_user), class: 'nav_links', style: 'color: white' %></li>
                   <li><%= link_to "Log Out", logout_path, class:"nav_links" %></li>
-              <% else %>
+                <% else %>
                   <li><%= link_to "Sign Up", new_user_path, class:"nav_links" %></li>
                   <li><%= link_to "Log In", login_path, class: 'nav_links', style: 'color: white' %></li>
-                  <% end %>
+                <% end %>
               </ul>
 
             </div><!-- /.navbar-collapse -->
@@ -53,19 +50,24 @@
         <div class="body">
           <div class="container">
             <%= yield %>
-          </div>
-          <% unless flash.empty? %>
-          <% flash.each do |f| %>
-           <script type="text/javascript">
-               <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
-                toastr['<%= type %>']('<%= f[1] %>');
+            <% unless flash.empty? %>
+              <% flash.each do |f| %>
+                <script type="text/javascript">
+                   <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+                    toastr['<%= type %>']('<%= f[1] %>');
+                    // toastr.options.progressBar = true;
+
                 </script>
-               <% end %>
-          <% end %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
         <footer class="footer">
-          General Assembly is a pioneer in education and career transformation, specializing in today’s most in-demand skills. The leading source for training, staffing, and career transitions, we foster a flourishing community of professionals pursuing
-          careers they love.
+          <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+              General Assembly is a pioneer in education and career transformation, specializing in today’s most in-demand skills. The leading source for training, staffing, and career transitions, we foster a flourishing community of professionals pursuing careers they love.
+            </div>
+          </div>
         </footer>
       </div>
     </body>
