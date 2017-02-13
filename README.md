@@ -54,10 +54,16 @@ Zach
 def
 ```
 <hr>
-Shiv
+Shiv: I chose this code because I have a hard time understanding the relationships when they are implemented into the app itself. The uniqueness is a nice touch because that ensures that that field has not been taken before.
 <hr>
 ```ruby
-def activity_count
+has_secure_password
+  mount_uploader :photo, PhotoUploader
+  has_many :ideas, dependent: :destroy
+  has_many :events_users
+  has_many :events, through: :events_users
+  validates :email, uniqueness: true
+  validates :username, uniqueness: true
 ```
 <hr>
 Alex: This code sorts and limits the amount of ideas that display on the front page.
