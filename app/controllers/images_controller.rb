@@ -30,6 +30,7 @@ class ImagesController < ApplicationController
     deleted_image = remain_images.delete_at(index) # delete the target image
     deleted_image.try(:remove!) # delete image from S3
     @idea.images = remain_images # re-assign back
+    puts "images array: #{@idea.images}" 
   end
 
   def images_params

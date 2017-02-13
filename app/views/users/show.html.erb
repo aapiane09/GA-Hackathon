@@ -2,48 +2,56 @@
   <div class="row subtitle text-center">
     <h1>Welcome, <%= @user.first_name %> <%= @user.last_name %>!</h1>
   </div>
-  <div class="col-md-4">
-    <div class="row">
-      <%= image_tag @user.photo, class:"img-circle img-responsive pic-large" %>
-    </div>
-    <div class="row">
-      <div class="cards center-block">
-        <div class="card-block">
-          <h4 class="card-title"> <span class="glyphicon glyphicon-user" ></span> <%= @user.username %></h4>
-          <div class="card-content">
-            <h4><span class="glyphicon glyphicon-envelope" ></span> <%= @user.email %></h4>
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="row">
+        <%= image_tag @user.photo, class:"img-circle img-responsive pic-large" %>
+      </div>
+      <div class="row">
+        <div class="cards center-block">
+          <div class="card-block">
+            <h4 class="card-title"> <span class="glyphicon glyphicon-user" ></span> <%= @user.username %></h4>
+            <div class="card-content">
+              <h4><span class="glyphicon glyphicon-envelope" ></span> <%= @user.email %></h4>
+            </div>
+            <div class="card-content">
+              <h4><span class="glyphicon glyphicon-link"></span>Social: <%= @user.social_url %></h4>
+            </div>
+            <div class="card-content">
+              <h4><span class="glyphicon glyphicon-education"></span>Class: <%= @user.course %></h4>
+            </div>
           </div>
-          <div class="card-content">
-            <h4><span class="glyphicon glyphicon-link"></span>Social: <%= @user.social_url %></h4>
-          </div>
-          <div class="card-content">
-            <h4><span class="glyphicon glyphicon-education"></span>Class: <%= @user.course %></h4>
-          </div>
+          <% if current_user == @user %>
+          <%= button_to "Edit Profile", edit_user_path(@user), :method => :get, class:"btn btn-danger center-block" %>
+          <% end %>
         </div>
-        <% if current_user == @user %>
-        <%= button_to "Edit Profile", edit_user_path(@user), :method => :get, class:"btn btn-danger center-block" %>
-        <% end %>
       </div>
     </div>
-  <div class="col-md-7 col-md-offset-1">
-    <div class="row">
-      <h2>My Ideas</h2>
-      <br>
-        <% @user.ideas.each do |p| %>
-          <div class="center-block idea-card">
-            <h2><%= link_to "#{p.title}", idea_path(p), class:"subtitle"%></h3>
-              <p><%=p.created_at.strftime("%b %d, %Y")%></p>
-              <p style="margin-bottom: 40px;"><%= truncate p.content, length: 160 %></p>
-          </div>
+
+
+      <!-- RIGHT SIDE DISPLAY -->
+    <div class="col-md-7 col-md-offset-1">
+      <div class="row">
+        <h2>My Ideas</h2>
         <br>
-      <% end %>
-    </div>
-    <div class="row">
-      <h2>My Events</h2>
-        <% @user.events.each do |p| %>
-          <h4><%= link_to "#{p.event_name}", event_path(p)%></h4>
-          <p><%=p.created_at.strftime("%b %d, %Y")%></p>
+          <% @user.ideas.each do |p| %>
+            <div class="center-block idea-card">
+              <h2><%= link_to "#{p.title}", idea_path(p), class:"subtitle"%></h3>
+                <p><%=p.created_at.strftime("%b %d, %Y")%></p>
+                <p style="margin-bottom: 40px;"><%= truncate p.content, length: 160 %></p>
+            </div>
+          <br>
         <% end %>
+      </div>
+      <div class="row">
+        <h2>My Events</h2>
+          <% @user.events.each do |p| %>
+          <div class="center-block idea-card">
+            <h4><%= link_to "#{p.event_name}", event_path(p)%></h4>
+            <p><%=p.created_at.strftime("%b %d, %Y")%></p>
+          </div>
+          <% end %>
+      </div>
     </div>
-  </div>
 </div>
