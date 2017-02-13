@@ -19,20 +19,22 @@
         </div>
 
       </div>
-      <div class="col-md-10">
+      
+      <div class="col-md-10 col-md-push-1">
       <% @event.ideas.order(:cached_weighted_average => :desc).reverse.each do |idea| %>
-      <div id="eventshowideas">
+      <div class="row" id="eventshowideas">
           <h2><%= link_to idea.title, idea %></h2>
             <h4>Submitted <%= time_ago_in_words(idea.created_at) %> ago
             by <%= idea.user.username  %>
           </h4>
           <h5> <%= idea.content  %> </h5>
-
+           <div class="col-md-2 col-md-pull-2">
           <%= link_to like_idea_path(idea), method: :put do %>
           <span class="glyphicon glyphicon-menu-up" aria-hidden="true"> </span>
             <h4>&nbsp;&nbsp;&nbsp;<%= idea.get_upvotes.size %></h4>
           <% end %>
           <hr>
+         </div>
         </div>
       <% end %>
 
