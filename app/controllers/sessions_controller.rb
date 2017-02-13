@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  after_action :save_my_previous_url, only:[:new]
 
   def new
     @user = User.new
@@ -10,7 +11,7 @@ class SessionsController < ApplicationController
       if @user
         login(@user)
         flash[:notice] = "Successfully logged in."
-        redirect_to @user
+        redirect_to session[:my_previous_url]
       else
         flash[:error] = "Incorrect email or password"
         redirect_to login_path
@@ -22,5 +23,4 @@ class SessionsController < ApplicationController
       flash[:notice] = "Successfully logged out."
       redirect_to root_path
     end
-
 end

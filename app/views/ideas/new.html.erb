@@ -1,13 +1,35 @@
-<div class="container">
-  <h1>Add your best idea!</h1>
+<!-- NEW Idea FORM  -->
+<div class="row">
+  <div class="col-md-2 col-xs-2">
 
-  <%= form_for [@event, @idea], url: create_idea_path do |f|%>
-    <div>
-      <%= f.text_field :title, placeholder: "Title", required: true %>
-    </div>
-    <div>
-      <%= f.text_field :content, placeholder: "Content", required: true %>
-    </div>
-    <%= f.submit "Submit" %>
-  <% end %>
+  </div>
+  <div class="col-md-8 col-xs-8">
+    <h1 class="subtitle">Add your best project idea!</h1>
+    <%= form_for [@event, @idea], url: create_idea_path do |f|%>
+      <div>
+        <%= f.label :title, class:"input_field_label" %>
+        <%= f.text_field :title, placeholder: "Title", required: true %>
+      </div>
+      <div>
+        <%= f.label :description, class:"input_field_label" %>
+        <%= f.text_field :content, placeholder: "Project Idea Elevator Pitch", required: true %>
+      </div>
+      <div>
+        <%= f.label :attachments, class:"input_field_label" %>
+        <p class="input_field_label"> Add any documentation to support your idea, such as: wireframes or elevator pitch video</p><br>
+        <div class="file_container">
+          <%= f.file_field :images, multiple:true %>
+        </div>
+      </div>
+
+      <%= f.submit "Submit", class:"btn btn-danger" %>
+    <% end %>
+
+  </div>
+  <div class="col-md-2 col-xs-2">
+
+  </div>
+
+
 </div>
+<% console %>

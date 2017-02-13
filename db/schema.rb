@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170211214526) do
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
     t.string   "photo"
+    t.json     "images"
     t.index ["cached_votes_down"], name: "index_ideas_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_ideas_on_cached_votes_score", using: :btree
     t.index ["cached_votes_total"], name: "index_ideas_on_cached_votes_total", using: :btree
