@@ -19,8 +19,11 @@
   <% end %>
 <% end %>
 
-<p>Attendance</p>
-  <%= @event.users.count %>
+<p>Attending: <%= @event.users.count %> people</p>
+<br>
+<% @event.users.each do |user| %>
+  <%= user.username %>
+  <% end %>
 
 
 
