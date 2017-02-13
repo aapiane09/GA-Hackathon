@@ -13,6 +13,11 @@ module SessionsHelper
     @current_user ||= User.find_by_id(session[:user_id])
   end
 
+  private
+
+  def store_location
+    session[:return_to] = request.fullpath
+  end
   # def logged_in?
   # !current_user.nil?
   # end

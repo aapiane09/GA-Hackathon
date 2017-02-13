@@ -1,5 +1,7 @@
 class IdeasController < ApplicationController
-
+  after_action :save_my_previous_url, only:[:new]
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+  
   def index
     @user = User.find(params[:user_id])
     @events = @user.events
@@ -9,7 +11,6 @@ class IdeasController < ApplicationController
     @idea = Idea.find_by_id(params[:id])
   end
 
-  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @idea = Idea.new
