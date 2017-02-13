@@ -26,7 +26,7 @@
         <div class="col-md-10">
           <h2><%= link_to idea.title, idea %></h2>
           <h4>Submitted <%= time_ago_in_words(idea.created_at) %> ago
-            by <%= idea.user.username  %>
+            by <%= link_to "#{idea.user.username}", user_path(idea.user)  %>
           </h4>
           <h5> <%= idea.content  %> </h5>
 
@@ -38,7 +38,6 @@
           <span class="glyphicon glyphicon-menu-up" aria-hidden="true"> </span>
             <h4>&nbsp;&nbsp;&nbsp;<%= idea.get_upvotes.size %></h4>
           <% end %>
-          <hr>
          </div>
         </div>
       <% end %>
