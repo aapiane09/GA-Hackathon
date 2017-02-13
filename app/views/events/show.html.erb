@@ -2,44 +2,72 @@
 
 <div class="container">
 
-  <h2><%= @event.event_name %></h2>
+  <div class="row">
+    <div class="col-md-9">
+      <h2 id="eventshowheader"><%= @event.event_name %></h2>
 
-  <%= button_to "Add Idea", new_idea_path(@event), method: "get" %>
+      <h4>General Assembly students and alumni come together for a weekend full of hacking!</h4>
+      <br>
+      <h4>What is a hackathon?</h4>
+      <p>A hackathon is where you turn your crazy ideas into real stuff. Students and alumni will come together and build something they’re passionate about; come, dive in, and make the most incredible things you can imagine alongside fellow creators.</p>
+      <br>
 
-  <p>Come to the event!</p>
-  <% if !current_user %>
-    <%= form_for([@event, @event.users.build]) do |f| %>
-      <%= f.submit "RSVP", class: "btn btn-default" %>
-    <% end %>
-  <% else %>
-    <%= form_for([@event, @event.users.build]) do |f| %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
-      <% if @event.users.include? current_user %>
-        <%= f.submit "You've already RSVP'd!", class: "disabled btn btn-default", disabled: "true" %>
+      <div class="row">
+
+        <div class="col-md-11">
+          <h1 class="subtitle" id="eventshowheader2">You Pick, We Build!</h1>
+        </div>
+
+      </div>
+      
+      <div class="col-md-10 col-md-push-1">
+      <% @event.ideas.order(:cached_weighted_average => :desc).reverse.each do |idea| %>
+      <div class="row" id="eventshowideas">
+          <h2><%= link_to idea.title, idea %></h2>
+            <h4>Submitted <%= time_ago_in_words(idea.created_at) %> ago
+            by <%= idea.user.username  %>
+          </h4>
+          <h5> <%= idea.content  %> </h5>
+           <div class="col-md-2 col-md-pull-2">
+          <%= link_to like_idea_path(idea), method: :put do %>
+          <span class="glyphicon glyphicon-menu-up" aria-hidden="true"> </span>
+            <h4>&nbsp;&nbsp;&nbsp;<%= idea.get_upvotes.size %></h4>
+          <% end %>
+          <hr>
+         </div>
+        </div>
+      <% end %>
+
+   </div>
+</div>
+
+   <!-- SIDE DISPLAY BAR -->
+    <div class="col-md-3" id="eventshowsidebar">
+      <img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3969/thumb_Advanced-Topics-In-Excel.jpg" alt="computer" id="eventshowimage" height="150" width="300">
+      <h4><span class="glyphicon glyphicon-calendar" aria-hidden="true"> </span><%= @event.date %></h4>
+      <h5> &nbsp;&nbsp;10 am – 5 pm PST </h5>
+      <hr id="sidebreak">
+      <h4><span class="glyphicon glyphicon-filter" aria-hidden="true"> </span> GA SF </h4>
+      <h5>&nbsp;&nbsp;225 Bush Street, 5th Floor &nbsp;&nbsp;(East Entrance)</h5>
+      <h5> &nbsp;&nbsp; San Francisco, CA 94104</h5>
+      <hr id="sidebreak">
+      <%= button_to "Add Idea", new_idea_path(@event), class: "btn btn-primary pic-large", method: "get" %>
+
+      <% if !current_user %>
+        <%= form_for([@event, @event.users.build]) do |f| %>
+          <%= f.submit "RSVP", class: "btn btn-danger pic-large" %>
+        <% end %>
       <% else %>
-        <%= f.submit "RSVP", class: "btn btn-default" %>
+        <%= form_for([@event, @event.users.build]) do |f| %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <% if @event.users.include? current_user %>
+            <%= f.submit "Happy Coding!", class: "btn btn-danger pic-large", disabled: "true" %>
+          <% else %>
+            <%= f.submit "RSVP", class: "btn btn-danger pic-large" %>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end %>
-
-<p>Attendance</p>
-    <%= @event.users.count %>
-
-
-
-
-  <h2>SUPER COOL IDEAS!</h2>
-  <hr>
-
-  <% @event.ideas.order(:cached_weighted_average => :desc).reverse.each do |idea| %>
-      <h4><%= link_to idea.title, idea %><br>
-        Submitted <%= time_ago_in_words(idea.created_at) %> ago
-        by 
-      </h4>
-      <%= link_to like_idea_path(idea), method: :put do %>
-        Upvote
-        <%= idea.get_upvotes.size %>
-      <% end %>
-      <hr>
-  <% end %>
+      <h4><span class="glyphicon glyphicon-user" aria-hidden="true"> </span>Hacker Count: <%= @event.users.count %> </h4>
+  </div>
+ </div>
 </div>
