@@ -45,7 +45,8 @@ gem 'ffaker'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 # easily upload and store files from the user
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.0',
+  github: 'carrierwaveuploader/carrierwave'
 # include a thumbnail
 gem 'mini_magick', '~> 4.3'
 # Allows voting on posts

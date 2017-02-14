@@ -10,8 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210202312) do
 
+ActiveRecord::Schema.define(version: 20170213225955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20170210202312) do
     t.string   "event_photo"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "content"
+    t.string   "slug"
   end
 
   create_table "events_users", id: false, force: :cascade do |t|
@@ -29,6 +31,18 @@ ActiveRecord::Schema.define(version: 20170210202312) do
     t.integer "event_id", null: false
     t.index ["event_id", "user_id"], name: "index_events_users_on_event_id_and_user_id", using: :btree
     t.index ["user_id", "event_id"], name: "index_events_users_on_user_id_and_event_id", using: :btree
+  end
+
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+    t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+    t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
   create_table "ideas", force: :cascade do |t|
@@ -46,7 +60,7 @@ ActiveRecord::Schema.define(version: 20170210202312) do
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
     t.string   "photo"
-
+    t.string   "slug"
     t.index ["cached_votes_down"], name: "index_ideas_on_cached_votes_down", using: :btree
     t.index ["cached_votes_score"], name: "index_ideas_on_cached_votes_score", using: :btree
     t.index ["cached_votes_total"], name: "index_ideas_on_cached_votes_total", using: :btree
@@ -70,7 +84,6 @@ ActiveRecord::Schema.define(version: 20170210202312) do
     t.string   "password_digest"
     t.string   "photo"
     t.string   "password_confirmation"
-
   end
 
   create_table "votes", force: :cascade do |t|

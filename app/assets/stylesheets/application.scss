@@ -16,17 +16,84 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "animate";
+@import "welcome";
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: asset-url('glyphicons-halflings-regular.eot');
   src: asset-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), asset-url('glyphicons-halflings-regular.woff') format('woff'), asset-url('glyphicons-halflings-regular.ttf') format('truetype'), asset-url('glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
+// APPLICATION.HTML.ERB
 
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+.contain {
+   min-height:100%;
+   position:relative;}
+
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  border-color: black;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+#logo {
+  height: 100%;
+}
+
+#hackathon {
+  font-family: 'Oswald', sans-serif;
+  line-height: 50px;
+  font-size: 3em;
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.header {
+   background: black;
+   padding:10px;
+}
+.body {
+   padding:10px;
+   padding-bottom: 150px;   /* Height of the footer */
+   background-color: #F6F6F6;
+}
+
+.footer {
+  color: #A2A2A2;
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height: 50px;   /* Height of the footer */
+  background-color: #222222;
+  padding-top: 10px;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+#toast-container{
+  top: 80px;
+}
+
+//
 input {
-    height: 40px;
-    width: 100%;
-    margin: 10px;
+  height: 40px;
+  width: 100%;
+  margin: 10px;
 }
 
 
@@ -47,17 +114,16 @@ img{
     padding-left: 15px;
 }
 
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
 
 #signupheader{
   font-family: 'Oswald', sans-serif;
   padding-left: 10px;
   padding-bottom: 20px;
 }
-
-.col {
-    background-color: green;
-}
-
 
 .nav_links{
   text-align: left;
@@ -67,7 +133,6 @@ img{
     background-color: white;
     color: red;
 }
-
 
 .subtitle {
   font-family: 'Oswald', sans-serif;
@@ -108,51 +173,19 @@ img{
   float: left;
 }
 
-html,
-body {
-  margin:0;
-  padding:0;
-  height:100%;
+.editlabel {
+  font-family: Oswald;
 }
 
-.navbar {
-  margin-bottom: 0;
+#sidebreak {
+  border: solid black 1px;
 }
 
-.navbar-brand {
-  padding: 0;
+#eventshowideas:hover {
+  background-color: #ECECEC;
 }
 
-#logo {
-  height: 100%;
+span.glyphicon-menu-up {
+    font-size: 2em;
 }
 
-#hackathon {
-  font-family: 'Oswald', sans-serif;
-  line-height: 50px;
-  font-size: 3em;
-  margin-left: 20px;
-  color: white;
-  text-decoration: none;
-}
-
-.contain {
-   min-height:100%;
-   position:relative;
-}
-.header {
-   background: black;
-   padding:10px;
-}
-.body {
-   padding:10px;
-   padding-bottom: 60px, auto;   /* Height of the footer */
-}
-.footer {
-  color: #A2A2A2;
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:60px, auto;   /* Height of the footer */
-  background: #222222;
-}

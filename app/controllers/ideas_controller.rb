@@ -1,26 +1,30 @@
 class IdeasController < ApplicationController
+  # after_action :save_my_previous_url, only:[:new]
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
     @events = @user.events
   end
 
   def show
-    @idea = Idea.find_by_id(params[:id])
+    @idea = Idea.friendly.find(params[:id])
   end
 
-  before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+  before_action :require_login, only: [:new, :create, :edit, :update, :destroy, :upvote]
+
 
   def new
     @idea = Idea.new
-    @event = Event.find_by_id(params[:id])
+    @event = Event.friendly.find(params[:id])
   end
 
   def create
       new_idea = Idea.new(idea_params)
-      @event = Event.find_by_id(params[:id])
+      @event = Event.friendly.find(params[:id])
       new_idea.user = current_user
       new_idea.event = @event
+      new_idea.images = idea_params[:images]
       @idea = new_idea.save
       if @idea
         redirect_to @event
@@ -34,16 +38,16 @@ class IdeasController < ApplicationController
 
   def edit
     idea_id = params[:id]
-    @idea = Idea.find_by_id(idea_id)
+    @idea = Idea.friendly.find(idea_id)
     #render :edit
   end
 
   def update
     idea_id = params[:id]
-    @idea = Idea.find(idea_id)
+    @idea = Idea.friendly.find(idea_id)
     if @idea.update_attributes(idea_params)
       flash[:notice] = "Updated successfully."
-      @event = Idea.find_by_id(params[:id]).event
+      @event = Idea.friendly.find(params[:id]).event
       redirect_to event_path(@event)
     else
       @idea.errors.full_messages.each do |message|
@@ -55,21 +59,21 @@ class IdeasController < ApplicationController
 
   def destroy
     idea_id = params[:id]
-    @idea = Idea.find(idea_id)
-    @event = Idea.find_by_id(params[:id]).event
+    @idea = Idea.friendly.find(idea_id)
+    @event = Idea.friendly.find(params[:id]).event
     @idea.destroy
     redirect_to event_path(@event)
   end
 
   def upvote
-    @idea = Idea.find(params[:id])
+    @idea = Idea.friendly.find(params[:id])
     @idea.upvote_by current_user
     redirect_to :back
   end
 
   private
   def idea_params
-    params.require(:idea).permit(:title, :content, :photo)
+    params.require(:idea).permit(:title, :content,:photo, {images:[]})
   end
 
 end
