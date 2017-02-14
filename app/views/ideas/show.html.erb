@@ -7,39 +7,11 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-10 col-md-offset-1 idea-card">
-      <div class="col-md-2">
-        <%= image_tag @idea.user.photo, class:"img-circle img-responsive pic-small" %>
-      </div>
-      <div class="col-md-8">
-        <h2><%= @idea.title.titleize %></h2>
-        <p>by
-          <%= link_to "#{@idea.user.username}", user_path(@idea.user) %></p>
-          <p><%= @idea.content %></p>
-        </div>
-
-        <div class="col-md-2">
-          <% if current_user == @idea.user %>
-          <div class="row">
-            <%= button_to edit_idea_path(@idea), class:"btn btn-danger btn-block" do %>
-            <span class="glyphicon glyphicon-pencil"></span>Edit Idea
-            <% end %>
-          <% end %>
-          </div>
-          <br>
-          <div class="row">
-            <%= button_to  idea_path(@idea), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger btn-block" do %>
-              <span class="glyphicon glyphicon-trash"></span>Delete Idea
-            <% end %>
-          </div>
-        </div>
-      </div>
+    <%= render "idea_card" %>
   </div>
   <div class="row">
     <h2 class="text-center">Attachments</h2>
     <div class="col-md-12 col-md-push-2">
-
       <%= image_tag @idea.photo %>
     </div>
  </div>
-<% console %>
