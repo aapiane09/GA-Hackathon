@@ -19,6 +19,9 @@
 @import "animate";
 @import "welcome";
 @import "events";
+@import "about";
+@import "users";
+@import "ideas";
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: asset-url('glyphicons-halflings-regular.eot');
@@ -90,21 +93,23 @@ a {
   top: 80px;
 }
 
-//
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 input {
   height: 40px;
   width: 100%;
   margin: 10px;
 }
 
-
 li {
     color: white;
 }
 
-img{
+img {
   margin-left: 20px;
-
 }
 
 .input_field {
@@ -115,77 +120,6 @@ img{
     padding-left: 15px;
 }
 
-.row {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-#signupheader{
-  font-family: 'Oswald', sans-serif;
-  padding-left: 10px;
-  padding-bottom: 20px;
-}
-
-.nav_links{
-  text-align: left;
-  padding-left: 50px;
-}
-.nav_links:hover {
-    background-color: white;
-    color: red;
-}
-
-.subtitle {
-  font-family: 'Oswald', sans-serif;
-  padding-left: 10px;
-  padding-bottom: 20px;
-}
-.pic-large{
-  margin: 10px auto;
-}
-
-.pic-small{
-
-}
-.card-title{
-  height: 100%;
-  width: 100%;
-}
-
-.cards{
-  margin-top: 10px;
-  background-color: #DADADA;
-  height: 200px;
-}
-.glyphicon-ring {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border: 3px solid white;
-  display: inline-table;
-  text-align: center;
-}
 .glyphicon{
   margin: 8px;
-}
-.idea-pic{
-  height: 50px;
-  width: 50px;
-  float: left;
-}
-
-.editlabel {
-  font-family: Oswald;
-}
-
-#sidebreak {
-  border: solid black 1px;
-}
-
-#eventshowideas:hover {
-  background-color: #ECECEC;
-}
-
-span.glyphicon-menu-up {
-    font-size: 2em;
 }
