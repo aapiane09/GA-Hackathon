@@ -32,7 +32,7 @@
         </div>
 
           <!-- UPVOTE ARROW & COUNTER -->
-           <div class="col-md-2 col-md-pull-3">
+           <div class="col-md-2 col-md-pull-1">
           <%= link_to like_idea_path(idea), method: :put do %>
           <span class="glyphicon glyphicon-menu-up" aria-hidden="true"> </span>
             <h4>&nbsp;&nbsp;&nbsp;<%= idea.get_upvotes.size %></h4>
