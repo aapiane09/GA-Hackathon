@@ -56,17 +56,27 @@ Zach: This piece of code creates our RSVP feature on the event show page.
 ```ruby
 #event_user controller
 def build
-  @event = Event.find_by_id(params[:event_id])
-  @user = current_user
-  @event.users << @user
-  redirect_to :back
+    @event = Event.friendly.find(params[:event_id])
+    @user = current_user
+    @event.users << @user
+    redirect_to :back
 end
 
 #event_show page
 <% if !current_user %>
   <%= form_for([@event, @event.users.build]) do |f| %>
     <%= f.submit "RSVP", class: "btn btn-danger pic-large" %>
+     <% end %>
+<% else %>
+  <%= form_for([@event, @event.users.build]) do |f| %>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <% if @event.users.include? current_user %>
+      <%= f.submit "Happy Coding!", class: "btn btn-danger pic-large", disabled: "true" %>
+    <% else %>
+      <%= f.submit "RSVP", class: "btn btn-danger pic-large" %>
+    <% end %>
   <% end %>
+<% end %>
 ```
 <hr>
 Shiv: I chose this code because I have a hard time understanding the relationships when they are implemented into the app itself. The uniqueness is a nice touch because that ensures that that field has not been taken before.
@@ -85,7 +95,7 @@ Alex: This code sorts and limits the amount of ideas that display on the front p
 <hr>
 ```ruby
 //welcomecontroller.rb
-sorted_ideas = Event.first.ideas.sort_by &:created_at
+sorted_ideas = Event.first.ideas.sort_by &:cached_votes_up
 @ideas = sorted_ideas.reverse
 
 //welcome#index
