@@ -15,8 +15,12 @@ Feel free to fork / star / watch for your own personal use.
 
 See the published project at [ga-hackathon.herokuapp.com](https://ga-hackathon.herokuapp.com/)!
 
+## Future Development
+
+Allow admins to create and edit hackathon events. Automate team assignments equally based on students selected class. Add the ability for ideas to contain multimedia.  
+
 #Entity-Relationship Diagram
-<img src="http://i.imgur.com/EvfVSwy.png" width="800">
+<img src="http://i.imgur.com/s9Hr7cV.png" width="800">
 
 
 #Technologies Used   
