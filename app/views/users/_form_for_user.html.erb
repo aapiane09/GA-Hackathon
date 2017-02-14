@@ -23,10 +23,11 @@
   <div class="row">
     <div class="col-md-6">
       <%= f.label :social_url, class:"input_field_label" %>:
-      <%= f.text_field :social_url, placeholder: "Social" %>
+      <%= f.text_field :social_url, placeholder: "URL for your LinkedIn, Github, etc." %>
     </div>
     <div class="col-md-6">
       <%= f.label :select_class, class:"input_field_label" %>
+      <br><br>
       <%= f.collection_select :course, User::COURSES, :to_s, :to_s,:include_blank => true %>
     </div>
   </div>
