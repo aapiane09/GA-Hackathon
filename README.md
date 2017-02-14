@@ -41,7 +41,7 @@ end
 
 <%= form_for @user do |f| %>
  <div class="col-md-6">
-     <%= f.label :select_class, class:"input_field_label" %>
+     <%= f.label :select_class, class:"input_field_label"  %>
      <%= f.collection_select :course, User::COURSES, :to_s, :to_s,:include_blank => true %>
    </div>
  <%= f.submit "Save", class:"btn btn-danger" %>
