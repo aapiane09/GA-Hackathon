@@ -15,15 +15,15 @@
     <!-- EDIT Idea BUTTON -->
     <% if current_user == @idea.user %>
       <div class="row">
-        <%= button_to edit_idea_path(@idea), class:"btn btn-danger btn-block" do %>
-        <span class="glyphicon glyphicon-pencil"></span>Edit Idea
+        <%= button_to edit_idea_path(@idea), class:"btn btn-danger btn-block editbutton" do %>
+        <span class="glyphicon glyphicon-pencil"></span>Edit
         <% end %>
       </div>
     <br>
     <!-- DELETE Idea BUTTON -->
     <div class="row">
-        <%= button_to  idea_path(@idea), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger btn-block" do %>
-          <span class="glyphicon glyphicon-trash"></span>Delete Idea
+        <%= button_to  idea_path(@idea), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger btn-block editbutton" do %>
+          <span class="glyphicon glyphicon-trash"></span>Delete
         <% end %>
     </div>
     <% end %>
