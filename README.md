@@ -6,7 +6,7 @@
 
 <i> Full Stack App built for our WDI Group Project </i>
 
-GA-Hackathon was built as a awesome thing to do things!
+GA-Hackathon was built as a way for General Assembly students and alumni to come together for a weekend full of hacking in an environment that is comfortable and collaborative.
 
 Users will be able to create a profile, create new ideas, upvote their favorite ideas and RSVP for hackathon events.
 
@@ -15,8 +15,12 @@ Feel free to fork / star / watch for your own personal use.
 
 See the published project at [ga-hackathon.herokuapp.com](https://ga-hackathon.herokuapp.com/)!
 
+## Future Development
+
+Allow admins to create and edit hackathon events. Automate team assignments equally based on students selected class. Add the ability for ideas to contain multimedia.  
+
 #Entity-Relationship Diagram
-<img src="http://i.imgur.com/EvfVSwy.png" width="800">
+<img src="http://i.imgur.com/s9Hr7cV.png" width="800">
 
 
 #Technologies Used   
@@ -27,7 +31,6 @@ HTML5, JavaScript, CSS, Ruby
 jQuery, Bootstrap
 ####Frameworks:
 Rails
-
 
 
 ## Code We're Proud Of
@@ -48,10 +51,22 @@ end
 <% end %>
 ```
 <hr>
-Zach
+Zach: This piece of code creates our RSVP feature on the event show page.
 <hr>
 ```ruby
-def
+#event_user controller
+def build
+  @event = Event.find_by_id(params[:event_id])
+  @user = current_user
+  @event.users << @user
+  redirect_to :back
+end
+
+#event_show page
+<% if !current_user %>
+  <%= form_for([@event, @event.users.build]) do |f| %>
+    <%= f.submit "RSVP", class: "btn btn-danger pic-large" %>
+  <% end %>
 ```
 <hr>
 Shiv: I chose this code because I have a hard time understanding the relationships when they are implemented into the app itself. The uniqueness is a nice touch because that ensures that that field has not been taken before.
@@ -78,11 +93,11 @@ sorted_ideas = Event.first.ideas.sort_by &:created_at
 ```
 
 ## Screen Shots
-<img src="http://i.imgur.com/tS1Lsuo.jpg" width="600">
+<img src="http://i.imgur.com/YbZPdGO.jpg" width="600">
 <hr>
-<img src="http://i.imgur.com/j9GVwR7.png" width="600">
+<img src="http://i.imgur.com/YN4sRig.png" width="600">
 <hr>
-<img src="http://i.imgur.com/ReJXa7Q.png" width="600">
+<img src="http://i.imgur.com/08s5qvJ.png" width="600">
 
 ## Trello Board
 [Wireframes, Database models & Sprint Planning](https://trello.com/b/O2z9teqw/project-2)
