@@ -1,0 +1,25 @@
+// Place all the styles related to the ideas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// IDEAS.SHOW.HTML.ERB
+.subtitle {
+  font-family: 'Oswald', sans-serif;
+  padding-left: 10px;
+  padding-bottom: 20px;
+}
+
+.pic-large{
+  margin: 10px auto;
+}
+
+.idea-pic{
+  height: 50px;
+  width: 50px;
+  float: left;
+}
+
+.idea-card{
+ border: solid 1px #DADADA ;
+ padding: 10px;
+}

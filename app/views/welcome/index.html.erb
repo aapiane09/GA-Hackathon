@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-3 col-xs-12 browse">
+    <h1 class="intro-text">Hack your way to success</h1>
+    <span class="intro-text">Join other classmates and alumni to build up your coding, design, and data science skills.</span>
+    <%= button_to "Upcoming Events", events_path, :method => :get, class:"btn btn-danger center-block eventbutton" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-1 col-xs-12 hackathon-img"></div>
+  <div class="col-md-3">
+    <h3 class="topideas">Top Ideas</h3>
+    <% @ideas.take(3).each do |p| %>
+      <div class="whitebkg">
+      <h4><%= link_to "#{p.title}", idea_path(p)%></h4>
+      <h5><%= "#{p.content.truncate(250)}"%></h5>
+    </div>
+    <% end %>
+  </div>
+</div>

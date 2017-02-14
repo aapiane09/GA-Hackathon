@@ -1,14 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>GAHackathon</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>GAHackathon</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all' %>
+        <%= javascript_include_tag 'application' %>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:700" rel="stylesheet">
+    </head>
+    <body>
+      <div class="contain">
+        <nav class="navbar navbar-default header">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <%= link_to root_path, class: "logolink, navbar-brand" do %>
+                <%= image_tag 'ga_logo1.png', class:"logo", id: "logo" %>
+              <% end %>
+              <%= link_to root_path do %>
+                <span id="hackathon"> HACKATHON</span>
+              <% end %>
+            </div>
 
-  <body>
-    <%= yield %>
-  </body>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+              <ul class="nav navbar-nav navbar-right">
+                <li><%= link_to "Events", events_path, class: 'nav_links' %></li>
+                <li><%= link_to "About", about_path, class: 'nav_links' %></li>
+                <% if current_user %>
+                  <li><%= link_to "Profile", user_path(current_user), class: 'nav_links', style: 'color: white' %></li>
+                  <li><%= link_to "Log Out", logout_path, class:"nav_links" %></li>
+                <% else %>
+                  <li><%= link_to "Sign Up", new_user_path, class:"nav_links" %></li>
+                  <li><%= link_to "Log In", login_path, class: 'nav_links', style: 'color: white' %></li>
+                <% end %>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+        <div class="body">
+          <div class="container">
+            <%= yield %>
+            <% unless flash.empty? %>
+              <% flash.each do |f| %>
+                <script type="text/javascript">
+                   <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+                    toastr['<%= type %>']('<%= f[1] %>');
+                    // toastr.options.progressBar = true;
+                </script>
+              <% end %> <!-- %flash% -->
+            <% end %> <!-- %unless% -->
+          </div> <!-- container -->
+        </div> <!-- .body -->
+        <footer class="footer">
+        </footer> <!-- .footer -->
+      </div> <!-- .contain -->
+    </body>
 </html>

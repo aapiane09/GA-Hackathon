@@ -1,0 +1,70 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//WELCOME.HTML.ERB
+
+.browse {
+  position: absolute;
+  border-radius: 5px;
+  margin-top: 200px;
+  z-index: 10;
+  background-color: white;
+  padding-bottom: 20px;
+}
+.browse h1 {
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-size: 3em;
+}
+
+.browse span {
+  font-family: 'Helvetica', sans-serif;
+  line-height: 175%;
+  font-size: 1.25em;
+}
+
+.eventbutton {
+  height: 50px;
+  width: 75%;
+  background-color: #FA4542;
+  box-shadow: 0 3px 0 0 #a20101;
+  font-size: 1.25em;
+}
+
+.hackathon-img {
+  position: relative;
+  background-image: url("12859589015_12f18e38d0_b.jpg");
+  background-position: center;
+  min-height: 600px;
+  margin-top: 20px;
+}
+
+.hackathon-img:hover {
+  -webkit-animation: pulse 1s;
+  animation: pulse 1s;
+}
+
+.topideas {
+  font-family: 'Oswald', sans-serif;
+  text-align: right;
+}
+
+.whitebkg {
+  background-color: white;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+@media (max-width:768px) {
+  .browse {
+    position: relative;
+    margin-top: 0;
+  }
+
+  .hackathon-img {
+    margin-bottom: 10px;
+  }
+}

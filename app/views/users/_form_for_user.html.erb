@@ -1,0 +1,51 @@
+<!-- PARTIAL FOR USER SIGNUP AND EDIT -->
+<%= form_for @user do |f| %>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.label :first_name, class:"input_field_label" %>:
+      <%= f.text_field :first_name, placeholder: "First Name", id:"form" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :last_name, class:"input_field_label" %>:
+      <%= f.text_field :last_name, placeholder: "Last Name", id:"form" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.label :username, class:"input_field_label", required:"true" %>:
+      <%= f.text_field :username, placeholder: "Username" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :email, class:"input_field_label" %>:
+      <%= f.email_field :email, placeholder: "Email" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.label :social_url, class:"input_field_label" %>:
+      <%= f.text_field :social_url, placeholder: "URL for your LinkedIn, Github, etc." %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :select_class, class:"input_field_label" %>
+      <br><br>
+      <%= f.collection_select :course, User::COURSES, :to_s, :to_s,:include_blank => true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.label :password, class:"input_field_label" %>:
+      <%= f.password_field :password, placeholder: " Choose Password", :required => true %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :password_confirmation, class:"input_field_label" %>:
+      <%= f.password_field :password_confirmation, placeholder: "Confirm Password", :required => true %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <%= f.label :attachments, class:"input_field_label" %>:
+      <%= f.file_field :photo %>
+    </div>
+  </div>
+  <%= f.submit "Save", class:"btn btn-danger" %>
+<% end %>
