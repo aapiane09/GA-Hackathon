@@ -25,12 +25,16 @@
   font-size: 1.25em;
 }
 
-.eventbutton {
+.eventbutton, .btn-danger {
   height: 50px;
   width: 75%;
   background-color: #FA4542;
   box-shadow: 0 3px 0 0 #a20101;
   font-size: 1.25em;
+}
+
+.btn-danger {
+  width: 100%;
 }
 
 .hackathon-img {
