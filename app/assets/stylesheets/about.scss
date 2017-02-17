@@ -1,14 +1,29 @@
 // Place all the styles related to the about controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.about-main-image {
-  max-width: 100%;
-  height: auto;
-  padding-top: 20px;
-}
+// .about-main-image {
+//   max-width: 100%;
+//   height: auto;
+//   padding-top: 20px;
+// }
 
 .card-cool {
   padding: 20px 20px 20px 20px;
+}
+
+.hackathon-img2 {
+  position: relative;
+  background-image: asset-data-url("12859589015_12f18e38d0_b.jpg");
+  background-position: center;
+  max-width: 100%;
+  height: auto;
+  padding-top: 20px;
+  border: 4px solid black;
+}
+
+.hackathon-img2:hover {
+  -webkit-animation: pulse 1s;
+  animation: pulse 1s;
 }
 
 
